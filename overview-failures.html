@@ -26,7 +26,7 @@
     });
   });
   </script>
-  <title>Cucumber Reports (no 202008160027) - Failures Overview</title>
+  <title>Cucumber Reports (no 202008160043) - Failures Overview</title>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
@@ -66,8 +66,8 @@
         <tbody>
           <tr class="info">
             <td>Ingress Conformance</td>
-            <td>202008160027</td>
-            <td>16 Aug 2020, 00:27</td>
+            <td>202008160043</td>
+            <td>16 Aug 2020, 00:44</td>
           </tr>
         </tbody>
       </table>
@@ -95,7 +95,7 @@
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">11.306</span>
+            </div><span class="lead-duration duration">10.635</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-1"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send TLS traffic to the matching backend service</span> </span>
             </div>
@@ -112,17 +112,17 @@
                 <div id="steps-2" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.016</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.027</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.145</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.205</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">6.137</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.379</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -167,12 +167,12 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.003</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.022</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-When failed">
-                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "https://foo.bar.com"</span> <span class="lead-duration duration">0.003</span>
+                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "https://foo.bar.com"</span> <span class="lead-duration duration">0.000</span>
                     </div>
                     <div class="inner-level">
                       <div class="message indention">
@@ -180,7 +180,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-4" class="collapse collapsable-details in">
-                          <pre>Get "https://localhost/": dial tcp [::1]:443: connect: connection refused</pre>
+                          <pre>Get "https://127.0.0.1/": dial tcp 127.0.0.1:443: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -215,7 +215,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">9.280</span>
+            </div><span class="lead-duration duration">10.604</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-5"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send traffic to the matching backend service</span> </span>
             </div>
@@ -232,17 +232,17 @@ spec:
                 <div id="steps-6" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.003</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.017</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.141</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.246</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.131</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.319</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -287,7 +287,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.003</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.020</span>
                     </div>
                   </div>
                   <div class="step">
@@ -300,7 +300,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-8" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -330,7 +330,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">10.492</span>
+            </div><span class="lead-duration duration">10.840</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-9"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should not route traffic when hostname does not match</span> </span>
             </div>
@@ -347,17 +347,17 @@ spec:
                 <div id="steps-10" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.005</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.171</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.454</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.299</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.342</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -402,7 +402,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.012</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.037</span>
                     </div>
                   </div>
                   <div class="step">
@@ -415,7 +415,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-12" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -435,7 +435,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">8.789</span>
+            </div><span class="lead-duration duration">11.872</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-13"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should send traffic to the matching backend service</span> </span>
             </div>
@@ -452,17 +452,17 @@ spec:
                 <div id="steps-14" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.003</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.006</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.399</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.439</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">3.381</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">6.407</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -507,7 +507,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.018</span>
                     </div>
                   </div>
                   <div class="step">
@@ -520,7 +520,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-16" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -550,7 +550,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">9.645</span>
+            </div><span class="lead-duration duration">9.633</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-17"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching on more than a single dns label</span> </span>
             </div>
@@ -567,17 +567,17 @@ spec:
                 <div id="steps-18" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.012</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.003</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.399</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.354</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.228</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.268</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -622,7 +622,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.006</span>
                     </div>
                   </div>
                   <div class="step">
@@ -635,7 +635,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-20" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -655,7 +655,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">11.698</span>
+            </div><span class="lead-duration duration">10.048</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-21"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching no dns label</span> </span>
             </div>
@@ -672,17 +672,17 @@ spec:
                 <div id="steps-22" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.016</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.022</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.415</span>
+                      <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.712</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">6.250</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.304</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -727,7 +727,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.015</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.007</span>
                     </div>
                   </div>
                   <div class="step">
@@ -740,7 +740,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-24" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -760,7 +760,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">7.344</span>
+            </div><span class="lead-duration duration">8.222</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-25"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -775,12 +775,12 @@ spec:
                 <div id="steps-26" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.006</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">2.320</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.208</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -799,12 +799,12 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.015</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.005</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-When failed">
-                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to http://"my-host"/""</span> <span class="lead-duration duration">0.002</span>
+                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to http://"my-host"/""</span> <span class="lead-duration duration">0.000</span>
                     </div>
                     <div class="inner-level">
                       <div class="message indention">
@@ -812,7 +812,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-28" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -899,7 +899,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">8.199</span>
+            </div><span class="lead-duration duration">8.122</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-29"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -914,12 +914,12 @@ spec:
                 <div id="steps-30" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.029</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.002</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.145</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.108</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -938,7 +938,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.023</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.012</span>
                     </div>
                   </div>
                   <div class="step">
@@ -951,7 +951,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-32" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/sub-path": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/sub-path": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1038,7 +1038,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">7.091</span>
+            </div><span class="lead-duration duration">8.228</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-33"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -1058,7 +1058,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">2.067</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.202</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1077,7 +1077,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.016</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.018</span>
                     </div>
                   </div>
                   <div class="step">
@@ -1090,7 +1090,7 @@ spec:
                           <a>Post</a>
                         </div>
                         <div id="msg-36" class="collapse collapsable-details in">
-                          <pre>Post "http://localhost/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Post "http://127.0.0.1/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1177,7 +1177,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">8.144</span>
+            </div><span class="lead-duration duration">8.148</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-37"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -1192,12 +1192,12 @@ spec:
                 <div id="steps-38" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.007</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.130</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.127</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1216,7 +1216,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.013</span>
                     </div>
                   </div>
                   <div class="step">
@@ -1229,7 +1229,7 @@ spec:
                           <a>Put</a>
                         </div>
                         <div id="msg-40" class="collapse collapsable-details in">
-                          <pre>Put "http://localhost/resource": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Put "http://127.0.0.1/resource": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1316,7 +1316,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">9.103</span>
+            </div><span class="lead-duration duration">9.172</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-41"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -1331,12 +1331,12 @@ spec:
                 <div id="steps-42" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.009</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.007</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">4.085</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">4.154</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1355,7 +1355,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.008</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.010</span>
                     </div>
                   </div>
                   <div class="step">
@@ -1368,7 +1368,7 @@ spec:
                           <a>Delete</a>
                         </div>
                         <div id="msg-44" class="collapse collapsable-details in">
-                          <pre>Delete "http://localhost/resource": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Delete "http://127.0.0.1/resource": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1455,7 +1455,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">8.126</span>
+            </div><span class="lead-duration duration">10.232</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-45"><span class="keyword indention">Scenario Outline</span> <span class="name">An Ingress with no rules should send all requests to the default backend</span> </span>
             </div>
@@ -1470,12 +1470,12 @@ spec:
                 <div id="steps-46" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.002</span>
+                      <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">3.115</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource named "default-backend" with this spec:</span> <span class="lead-duration duration">5.198</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1494,7 +1494,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.007</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.026</span>
                     </div>
                   </div>
                   <div class="step">
@@ -1507,7 +1507,7 @@ spec:
                           <a>Patch</a>
                         </div>
                         <div id="msg-48" class="collapse collapsable-details in">
-                          <pre>Patch "http://localhost/resource": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Patch "http://127.0.0.1/resource": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1594,7 +1594,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">18.889</span>
+            </div><span class="lead-duration duration">20.019</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-49"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with exact path rules should send traffic to the matching backend service</span> </span>
             </div>
@@ -1611,7 +1611,7 @@ spec:
                 <div id="steps-50" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">13.874</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">15.005</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1719,7 +1719,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-52" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1749,7 +1749,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">22.846</span>
+            </div><span class="lead-duration duration">21.980</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-53"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with exact path rules should not match requests with trailing slash</span> </span>
             </div>
@@ -1766,7 +1766,7 @@ spec:
                 <div id="steps-54" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.842</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.971</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -1861,7 +1861,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.007</span>
                     </div>
                   </div>
                   <div class="step">
@@ -1874,7 +1874,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-56" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -1894,7 +1894,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">21.870</span>
+            </div><span class="lead-duration duration">20.026</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-57"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with exact path rules should be case sensitive</span> </span>
             </div>
@@ -1911,7 +1911,7 @@ spec:
                 <div id="steps-58" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.856</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">14.985</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2006,7 +2006,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.013</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.040</span>
                     </div>
                   </div>
                   <div class="step">
@@ -2019,7 +2019,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-60" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/FOO": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/FOO": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2039,7 +2039,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">24.811</span>
+            </div><span class="lead-duration duration">26.997</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-61"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with exact path rules should not match any other label</span> </span>
             </div>
@@ -2056,7 +2056,7 @@ spec:
                 <div id="steps-62" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">19.806</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">21.979</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2151,7 +2151,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.018</span>
                     </div>
                   </div>
                   <div class="step">
@@ -2164,7 +2164,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-64" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/bar": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/bar": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2184,7 +2184,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">19.883</span>
+            </div><span class="lead-duration duration">21.983</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-65"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should send traffic to the matching backend service</span> </span>
             </div>
@@ -2201,7 +2201,7 @@ spec:
                 <div id="steps-66" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">14.865</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.969</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2301,7 +2301,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-When failed">
-                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://prefix-path-rules/foo"</span> <span class="lead-duration duration">0.003</span>
+                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://prefix-path-rules/foo"</span> <span class="lead-duration duration">0.000</span>
                     </div>
                     <div class="inner-level">
                       <div class="message indention">
@@ -2309,7 +2309,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-68" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2339,7 +2339,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">23.738</span>
+            </div><span class="lead-duration duration">22.013</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-69"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should ignore the request trailing slash and send traffic to the matching backend service</span> </span>
             </div>
@@ -2356,7 +2356,7 @@ spec:
                 <div id="steps-70" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">18.727</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.993</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2451,7 +2451,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.011</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.020</span>
                     </div>
                   </div>
                   <div class="step">
@@ -2464,7 +2464,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-72" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2494,7 +2494,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">21.875</span>
+            </div><span class="lead-duration duration">23.032</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-73"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should be case sensitive</span> </span>
             </div>
@@ -2511,7 +2511,7 @@ spec:
                 <div id="steps-74" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.832</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">18.011</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2606,12 +2606,12 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.037</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.020</span>
                     </div>
                   </div>
                   <div class="step">
                     <div class="brief step-name-When failed">
-                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://prefix-path-rules/FOO"</span> <span class="lead-duration duration">0.005</span>
+                      <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://prefix-path-rules/FOO"</span> <span class="lead-duration duration">0.000</span>
                     </div>
                     <div class="inner-level">
                       <div class="message indention">
@@ -2619,7 +2619,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-76" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/FOO": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/FOO": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2639,7 +2639,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">22.878</span>
+            </div><span class="lead-duration duration">23.031</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-77"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should match multiple labels, match the longest path, and send traffic to the matching backend service</span> </span>
             </div>
@@ -2656,7 +2656,7 @@ spec:
                 <div id="steps-78" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.873</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">18.014</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2751,7 +2751,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.004</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.016</span>
                     </div>
                   </div>
                   <div class="step">
@@ -2764,7 +2764,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-80" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaa/bbb": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaa/bbb": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2794,7 +2794,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">20.869</span>
+            </div><span class="lead-duration duration">24.152</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-81"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should match multiple labels, match the longest path, and subpaths and send traffic to the matching backend service</span> </span>
             </div>
@@ -2811,7 +2811,7 @@ spec:
                 <div id="steps-82" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">15.841</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">19.137</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -2906,7 +2906,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.027</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.014</span>
                     </div>
                   </div>
                   <div class="step">
@@ -2919,7 +2919,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-84" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaa/bbb/ccc": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaa/bbb/ccc": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -2949,7 +2949,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">21.792</span>
+            </div><span class="lead-duration duration">22.395</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-85"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should and send traffic to the matching backend service</span> </span>
             </div>
@@ -2966,7 +2966,7 @@ spec:
                 <div id="steps-86" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">16.784</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.368</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3061,7 +3061,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.006</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.027</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3074,7 +3074,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-88" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaa/ccc": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaa/ccc": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3104,7 +3104,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">22.850</span>
+            </div><span class="lead-duration duration">24.153</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-89"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should match each labels string prefix</span> </span>
             </div>
@@ -3121,7 +3121,7 @@ spec:
                 <div id="steps-90" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.842</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">19.143</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3216,7 +3216,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.007</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.009</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3229,7 +3229,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-92" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaaccc": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaaccc": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3249,7 +3249,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">22.717</span>
+            </div><span class="lead-duration duration">19.079</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-93"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with prefix path rules should ignore the request trailing slash and send traffic to the matching backend service</span> </span>
             </div>
@@ -3266,7 +3266,7 @@ spec:
                 <div id="steps-94" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.710</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">14.050</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3361,7 +3361,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.005</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.027</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3374,7 +3374,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-96" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3404,7 +3404,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">20.959</span>
+            </div><span class="lead-duration duration">24.046</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-97"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with mixed path rules should send traffic to the matching backend service where Exact is preferred</span> </span>
             </div>
@@ -3421,7 +3421,7 @@ spec:
                 <div id="steps-98" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">15.952</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">19.039</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3516,7 +3516,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.006</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.007</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3529,7 +3529,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-100" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3559,7 +3559,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">20.733</span>
+            </div><span class="lead-duration duration">19.903</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-101"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a trailing slashes in a prefix path rule should ignore the trailing slash and send traffic to the matching backend service</span> </span>
             </div>
@@ -3576,7 +3576,7 @@ spec:
                 <div id="steps-102" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">15.722</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">14.887</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3671,7 +3671,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.009</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.015</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3684,7 +3684,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-104" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaa/bbb": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaa/bbb": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3714,7 +3714,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">24.014</span>
+            </div><span class="lead-duration duration">20.937</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-105"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a trailing slashes in a prefix path rule should ignore the trailing slash and send traffic to the matching backend service</span> </span>
             </div>
@@ -3731,7 +3731,7 @@ spec:
                 <div id="steps-106" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">19.006</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">15.879</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3826,7 +3826,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.006</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.057</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3839,7 +3839,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-108" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/aaa/bbb/": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/aaa/bbb/": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
@@ -3869,7 +3869,7 @@ spec:
             </div>
             <div class="tags indention">
               <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-            </div><span class="lead-duration duration">22.758</span>
+            </div><span class="lead-duration duration">23.816</span>
             <div class="brief failed">
               <span data-toggle="collapse" class="collapsable-control" data-target="#element-109"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a trailing slashes in an exact path rule should not match requests without a trailing slash</span> </span>
             </div>
@@ -3886,7 +3886,7 @@ spec:
                 <div id="steps-110" class="inner-level collapse collapsable-details in">
                   <div class="step">
                     <div class="brief step-name-Given passed">
-                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">17.724</span>
+                      <span class="keyword indention">Given</span> <span class="name">an Ingress resource in a new random namespace</span> <span class="lead-duration duration">18.810</span>
                     </div>
                     <div class="inner-level">
                       <div class="docstring indention">
@@ -3981,7 +3981,7 @@ spec:
                   </div>
                   <div class="step">
                     <div class="brief step-name-Then passed">
-                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.033</span>
+                      <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.005</span>
                     </div>
                   </div>
                   <div class="step">
@@ -3994,7 +3994,7 @@ spec:
                           <a>Get</a>
                         </div>
                         <div id="msg-112" class="collapse collapsable-details in">
-                          <pre>Get "http://localhost/foo": dial tcp [::1]:80: connect: connection refused</pre>
+                          <pre>Get "http://127.0.0.1/foo": dial tcp 127.0.0.1:80: connect: connection refused</pre>
                         </div>
                       </div>
                     </div>
