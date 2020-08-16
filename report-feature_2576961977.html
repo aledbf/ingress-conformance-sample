@@ -26,7 +26,7 @@
     });
   });
   </script>
-  <title>Cucumber Reports (no 202008160121) - Feature: Host rules</title>
+  <title>Cucumber Reports (no 202008160134) - Feature: Host rules</title>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
@@ -66,8 +66,8 @@
         <tbody>
           <tr class="info">
             <td>Ingress Conformance</td>
-            <td>202008160121</td>
-            <td>16 Aug 2020, 01:21</td>
+            <td>202008160134</td>
+            <td>16 Aug 2020, 01:34</td>
           </tr>
         </tbody>
       </table>
@@ -108,16 +108,16 @@
           <tbody>
             <tr>
               <td class="tagname">Host rules</td>
-              <td class="passed">33</td>
-              <td class="failed">3</td>
-              <td class="skipped">7</td>
+              <td class="passed">38</td>
+              <td class="failed">2</td>
+              <td class="skipped">3</td>
               <td>0</td>
               <td>0</td>
               <td class="total">43</td>
-              <td class="passed">3</td>
-              <td class="failed">3</td>
+              <td class="passed">4</td>
+              <td class="failed">2</td>
               <td class="total">6</td>
-              <td class="duration" data-value="77070293968">1:17.070</td>
+              <td class="duration" data-value="70812454382">1:10.812</td>
               <td class="failed">Failed</td>
             </tr>
           </tbody>
@@ -147,34 +147,34 @@
             <div class="element">
               <div class="tags indention">
                 <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">23.673</span>
-              <div class="brief failed">
-                <span data-toggle="collapse" class="collapsable-control" data-target="#element-1"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send TLS traffic to the matching backend service</span> </span>
+              </div><span class="lead-duration duration">12.939</span>
+              <div class="brief passed">
+                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-1"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send TLS traffic to the matching backend service</span> </span>
               </div>
               <div class="description indention">
                 (host foo.bar.com matches request foo.bar.com)
               </div>
               <div id="element-1" class="collapse collapsable-details in">
                 <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsable-control" data-target="#steps-2">
-                    <div class="brief failed">
+                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-2">
+                    <div class="brief passed">
                       <span class="keyword indention">Steps</span>
                     </div>
                   </div>
                   <div id="steps-2" class="inner-level collapse collapsable-details in">
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.016</span>
+                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.014</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.458</span>
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.477</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">17.178</span>
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">7.416</span>
                       </div>
                       <div class="inner-level">
                         <div class="docstring indention">
@@ -219,41 +219,31 @@ spec:
                     </div>
                     <div class="step">
                       <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.006</span>
+                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.025</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-When failed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "https://foo.bar.com"</span> <span class="lead-duration duration">1.013</span>
-                      </div>
-                      <div class="inner-level">
-                        <div class="message indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-4">
-                            <a>Get</a>
-                          </div>
-                          <div id="msg-4" class="collapse collapsable-details in">
-                            <pre>Get "https://10.106.71.111/": dial tcp 10.106.71.111:443: connect: connection refused</pre>
-                          </div>
-                        </div>
+                      <div class="brief step-name-When passed">
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "https://foo.bar.com"</span> <span class="lead-duration duration">0.006</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-Then skipped">
+                      <div class="brief step-name-Then passed">
                         <span class="keyword indention">Then</span> <span class="name">the secure connection must verify the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.000</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-And skipped">
+                      <div class="brief step-name-And passed">
                         <span class="keyword indention">And</span> <span class="name">the response status-code must be 200</span> <span class="lead-duration duration">0.000</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-And skipped">
+                      <div class="brief step-name-And passed">
                         <span class="keyword indention">And</span> <span class="name">the response must be served by the "foo-bar-com" service</span> <span class="lead-duration duration">0.000</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-And skipped">
+                      <div class="brief step-name-And passed">
                         <span class="keyword indention">And</span> <span class="name">the request host must be "foo.bar.com"</span> <span class="lead-duration duration">0.000</span>
                       </div>
                     </div>
@@ -264,215 +254,21 @@ spec:
             <div class="element">
               <div class="tags indention">
                 <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">10.450</span>
+              </div><span class="lead-duration duration">10.105</span>
               <div class="brief passed">
-                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-5"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send traffic to the matching backend service</span> </span>
+                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-4"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should send traffic to the matching backend service</span> </span>
               </div>
               <div class="description indention">
                 (host foo.bar.com matches request foo.bar.com)
               </div>
-              <div id="element-5" class="collapse collapsable-details in">
+              <div id="element-4" class="collapse collapsable-details in">
                 <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-6">
+                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-5">
                     <div class="brief passed">
                       <span class="keyword indention">Steps</span>
                     </div>
                   </div>
-                  <div id="steps-6" class="inner-level collapse collapsable-details in">
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.002</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.239</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.184</span>
-                      </div>
-                      <div class="inner-level">
-                        <div class="docstring indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-7">
-                            <a>Doc string</a>
-                          </div>
-                          <div id="msg-7" class="collapse collapsable-details">
-                            <pre>apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: host-rules
-spec:
-  tls:
-    - hosts:
-        - foo.bar.com
-      secretName: conformance-tls
-  rules:
-    - host: "*.foo.com"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wildcard-foo-com
-                port:
-                  number: 8080
-
-    - host: foo.bar.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: foo-bar-com
-                port:
-                  name: http</pre>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.014</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-When passed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://foo.bar.com"</span> <span class="lead-duration duration">0.008</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-And passed">
-                        <span class="keyword indention">And</span> <span class="name">the response status-code must be 200</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-And passed">
-                        <span class="keyword indention">And</span> <span class="name">the response must be served by the "foo-bar-com" service</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-And passed">
-                        <span class="keyword indention">And</span> <span class="name">the request host must be "foo.bar.com"</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="element">
-              <div class="tags indention">
-                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">10.600</span>
-              <div class="brief passed">
-                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-8"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should not route traffic when hostname does not match</span> </span>
-              </div>
-              <div class="description indention">
-                (host foo.bar.com does not match request subdomain.bar.com)
-              </div>
-              <div id="element-8" class="collapse collapsable-details in">
-                <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-9">
-                    <div class="brief passed">
-                      <span class="keyword indention">Steps</span>
-                    </div>
-                  </div>
-                  <div id="steps-9" class="inner-level collapse collapsable-details in">
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.005</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.163</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.411</span>
-                      </div>
-                      <div class="inner-level">
-                        <div class="docstring indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-10">
-                            <a>Doc string</a>
-                          </div>
-                          <div id="msg-10" class="collapse collapsable-details">
-                            <pre>apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: host-rules
-spec:
-  tls:
-    - hosts:
-        - foo.bar.com
-      secretName: conformance-tls
-  rules:
-    - host: "*.foo.com"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wildcard-foo-com
-                port:
-                  number: 8080
-
-    - host: foo.bar.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: foo-bar-com
-                port:
-                  name: http</pre>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.018</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-When passed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://subdomain.bar.com"</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 404</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="element">
-              <div class="tags indention">
-                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">11.123</span>
-              <div class="brief failed">
-                <span data-toggle="collapse" class="collapsable-control" data-target="#element-11"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should send traffic to the matching backend service</span> </span>
-              </div>
-              <div class="description indention">
-                (Matches based on shared suffix)
-              </div>
-              <div id="element-11" class="collapse collapsable-details in">
-                <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsable-control" data-target="#steps-12">
-                    <div class="brief failed">
-                      <span class="keyword indention">Steps</span>
-                    </div>
-                  </div>
-                  <div id="steps-12" class="inner-level collapse collapsable-details in">
+                  <div id="steps-5" class="inner-level collapse collapsable-details in">
                     <div class="step">
                       <div class="brief step-name-Given passed">
                         <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.009</span>
@@ -480,131 +276,19 @@ spec:
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.847</span>
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.774</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.240</span>
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.298</span>
                       </div>
                       <div class="inner-level">
                         <div class="docstring indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-13">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-6">
                             <a>Doc string</a>
                           </div>
-                          <div id="msg-13" class="collapse collapsable-details">
-                            <pre>apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: host-rules
-spec:
-  tls:
-    - hosts:
-        - foo.bar.com
-      secretName: conformance-tls
-  rules:
-    - host: "*.foo.com"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: wildcard-foo-com
-                port:
-                  number: 8080
-
-    - host: foo.bar.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: foo-bar-com
-                port:
-                  name: http</pre>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.019</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-When failed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://bar.foo.com"</span> <span class="lead-duration duration">0.006</span>
-                      </div>
-                      <div class="inner-level">
-                        <div class="message indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-14">
-                            <a>Get</a>
-                          </div>
-                          <div id="msg-14" class="collapse collapsable-details in">
-                            <pre>Get "https://10.106.71.111/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Then skipped">
-                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 200</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-And skipped">
-                        <span class="keyword indention">And</span> <span class="name">the response must be served by the "wildcard-foo-com" service</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-And skipped">
-                        <span class="keyword indention">And</span> <span class="name">the request host must be "bar.foo.com"</span> <span class="lead-duration duration">0.000</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="element">
-              <div class="tags indention">
-                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">11.555</span>
-              <div class="brief failed">
-                <span data-toggle="collapse" class="collapsable-control" data-target="#element-15"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching on more than a single dns label</span> </span>
-              </div>
-              <div class="description indention">
-                (No match, wildcard only covers a single DNS label)
-              </div>
-              <div id="element-15" class="collapse collapsable-details in">
-                <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsable-control" data-target="#steps-16">
-                    <div class="brief failed">
-                      <span class="keyword indention">Steps</span>
-                    </div>
-                  </div>
-                  <div id="steps-16" class="inner-level collapse collapsable-details in">
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.006</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.342</span>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">6.194</span>
-                      </div>
-                      <div class="inner-level">
-                        <div class="docstring indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-17">
-                            <a>Doc string</a>
-                          </div>
-                          <div id="msg-17" class="collapse collapsable-details">
+                          <div id="msg-6" class="collapse collapsable-details">
                             <pre>apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -647,22 +331,22 @@ spec:
                     </div>
                     <div class="step">
                       <div class="brief step-name-When passed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://baz.bar.foo.com"</span> <span class="lead-duration duration">0.002</span>
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://foo.bar.com"</span> <span class="lead-duration duration">0.013</span>
                       </div>
                     </div>
                     <div class="step">
-                      <div class="brief step-name-Then failed">
-                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 404</span> <span class="lead-duration duration">0.000</span>
+                      <div class="brief step-name-And passed">
+                        <span class="keyword indention">And</span> <span class="name">the response status-code must be 200</span> <span class="lead-duration duration">0.000</span>
                       </div>
-                      <div class="inner-level">
-                        <div class="message indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-18">
-                            <a>expected</a>
-                          </div>
-                          <div id="msg-18" class="collapse collapsable-details in">
-                            <pre>expected status code 404 but 200 was returned</pre>
-                          </div>
-                        </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-And passed">
+                        <span class="keyword indention">And</span> <span class="name">the response must be served by the "foo-bar-com" service</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-And passed">
+                        <span class="keyword indention">And</span> <span class="name">the request host must be "foo.bar.com"</span> <span class="lead-duration duration">0.000</span>
                       </div>
                     </div>
                   </div>
@@ -672,41 +356,41 @@ spec:
             <div class="element">
               <div class="tags indention">
                 <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
-              </div><span class="lead-duration duration">9.666</span>
+              </div><span class="lead-duration duration">10.813</span>
               <div class="brief passed">
-                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-19"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching no dns label</span> </span>
+                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-7"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a host rule should not route traffic when hostname does not match</span> </span>
               </div>
               <div class="description indention">
-                (No match, wildcard only covers a single DNS label)
+                (host foo.bar.com does not match request subdomain.bar.com)
               </div>
-              <div id="element-19" class="collapse collapsable-details in">
+              <div id="element-7" class="collapse collapsable-details in">
                 <div class="steps inner-level">
-                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-20">
+                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-8">
                     <div class="brief passed">
                       <span class="keyword indention">Steps</span>
                     </div>
                   </div>
-                  <div id="steps-20" class="inner-level collapse collapsable-details in">
+                  <div id="steps-8" class="inner-level collapse collapsable-details in">
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.023</span>
+                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.412</span>
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.501</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-Given passed">
-                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">4.202</span>
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.276</span>
                       </div>
                       <div class="inner-level">
                         <div class="docstring indention">
-                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-21">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-9">
                             <a>Doc string</a>
                           </div>
-                          <div id="msg-21" class="collapse collapsable-details">
+                          <div id="msg-9" class="collapse collapsable-details">
                             <pre>apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -744,12 +428,318 @@ spec:
                     </div>
                     <div class="step">
                       <div class="brief step-name-Then passed">
-                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.026</span>
+                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.021</span>
                       </div>
                     </div>
                     <div class="step">
                       <div class="brief step-name-When passed">
-                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://foo.com"</span> <span class="lead-duration duration">0.001</span>
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://subdomain.bar.com"</span> <span class="lead-duration duration">0.004</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then passed">
+                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 404</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="element">
+              <div class="tags indention">
+                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
+              </div><span class="lead-duration duration">13.237</span>
+              <div class="brief failed">
+                <span data-toggle="collapse" class="collapsable-control" data-target="#element-10"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should send traffic to the matching backend service</span> </span>
+              </div>
+              <div class="description indention">
+                (Matches based on shared suffix)
+              </div>
+              <div id="element-10" class="collapse collapsable-details in">
+                <div class="steps inner-level">
+                  <div data-toggle="collapse" class="collapsable-control" data-target="#steps-11">
+                    <div class="brief failed">
+                      <span class="keyword indention">Steps</span>
+                    </div>
+                  </div>
+                  <div id="steps-11" class="inner-level collapse collapsable-details in">
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.016</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.947</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">7.259</span>
+                      </div>
+                      <div class="inner-level">
+                        <div class="docstring indention">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-12">
+                            <a>Doc string</a>
+                          </div>
+                          <div id="msg-12" class="collapse collapsable-details">
+                            <pre>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: host-rules
+spec:
+  tls:
+    - hosts:
+        - foo.bar.com
+      secretName: conformance-tls
+  rules:
+    - host: "*.foo.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wildcard-foo-com
+                port:
+                  number: 8080
+
+    - host: foo.bar.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foo-bar-com
+                port:
+                  name: http</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then passed">
+                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.005</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-When failed">
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://bar.foo.com"</span> <span class="lead-duration duration">0.007</span>
+                      </div>
+                      <div class="inner-level">
+                        <div class="message indention">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-13">
+                            <a>Get</a>
+                          </div>
+                          <div id="msg-13" class="collapse collapsable-details in">
+                            <pre>Get "https://10.111.96.75/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then skipped">
+                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 200</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-And skipped">
+                        <span class="keyword indention">And</span> <span class="name">the response must be served by the "wildcard-foo-com" service</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-And skipped">
+                        <span class="keyword indention">And</span> <span class="name">the request host must be "bar.foo.com"</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="element">
+              <div class="tags indention">
+                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
+              </div><span class="lead-duration duration">10.777</span>
+              <div class="brief failed">
+                <span data-toggle="collapse" class="collapsable-control" data-target="#element-14"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching on more than a single dns label</span> </span>
+              </div>
+              <div class="description indention">
+                (No match, wildcard only covers a single DNS label)
+              </div>
+              <div id="element-14" class="collapse collapsable-details in">
+                <div class="steps inner-level">
+                  <div data-toggle="collapse" class="collapsable-control" data-target="#steps-15">
+                    <div class="brief failed">
+                      <span class="keyword indention">Steps</span>
+                    </div>
+                  </div>
+                  <div id="steps-15" class="inner-level collapse collapsable-details in">
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.005</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">0.315</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">5.426</span>
+                      </div>
+                      <div class="inner-level">
+                        <div class="docstring indention">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-16">
+                            <a>Doc string</a>
+                          </div>
+                          <div id="msg-16" class="collapse collapsable-details">
+                            <pre>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: host-rules
+spec:
+  tls:
+    - hosts:
+        - foo.bar.com
+      secretName: conformance-tls
+  rules:
+    - host: "*.foo.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wildcard-foo-com
+                port:
+                  number: 8080
+
+    - host: foo.bar.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foo-bar-com
+                port:
+                  name: http</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then passed">
+                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.023</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-When passed">
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://baz.bar.foo.com"</span> <span class="lead-duration duration">0.006</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then failed">
+                        <span class="keyword indention">Then</span> <span class="name">the response status-code must be 404</span> <span class="lead-duration duration">0.000</span>
+                      </div>
+                      <div class="inner-level">
+                        <div class="message indention">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-17">
+                            <a>expected</a>
+                          </div>
+                          <div id="msg-17" class="collapse collapsable-details in">
+                            <pre>expected status code 404 but 200 was returned</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="element">
+              <div class="tags indention">
+                <b>Tags:</b> <a href="report-tag_3645108465.html">@sig-network</a> <a href="report-tag_3193701204.html">@conformance</a> <a href="report-tag_2830925642.html">@release-1.19</a>
+              </div><span class="lead-duration duration">12.938</span>
+              <div class="brief passed">
+                <span data-toggle="collapse" class="collapsed collapsable-control" data-target="#element-18"><span class="keyword indention">Scenario</span> <span class="name">An Ingress with a wildcard host rule should not route traffic matching no dns label</span> </span>
+              </div>
+              <div class="description indention">
+                (No match, wildcard only covers a single DNS label)
+              </div>
+              <div id="element-18" class="collapse collapsable-details in">
+                <div class="steps inner-level">
+                  <div data-toggle="collapse" class="collapsed collapsable-control" data-target="#steps-19">
+                    <div class="brief passed">
+                      <span class="keyword indention">Steps</span>
+                    </div>
+                  </div>
+                  <div id="steps-19" class="inner-level collapse collapsable-details in">
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a new random namespace</span> <span class="lead-duration duration">0.008</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname</span> <span class="lead-duration duration">1.512</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Given passed">
+                        <span class="keyword indention">Given</span> <span class="name">an Ingress resource</span> <span class="lead-duration duration">6.393</span>
+                      </div>
+                      <div class="inner-level">
+                        <div class="docstring indention">
+                          <div data-toggle="collapse" class="collapsable-control" data-target="#msg-20">
+                            <a>Doc string</a>
+                          </div>
+                          <div id="msg-20" class="collapse collapsable-details">
+                            <pre>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: host-rules
+spec:
+  tls:
+    - hosts:
+        - foo.bar.com
+      secretName: conformance-tls
+  rules:
+    - host: "*.foo.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wildcard-foo-com
+                port:
+                  number: 8080
+
+    - host: foo.bar.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foo-bar-com
+                port:
+                  name: http</pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-Then passed">
+                        <span class="keyword indention">Then</span> <span class="name">The Ingress status shows the IP address or FQDN where it is exposed</span> <span class="lead-duration duration">5.018</span>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="brief step-name-When passed">
+                        <span class="keyword indention">When</span> <span class="name">I send a "GET" request to "http://foo.com"</span> <span class="lead-duration duration">0.004</span>
                       </div>
                     </div>
                     <div class="step">
