@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.tablesorter.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <script>
+  $(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+  });
+  </script>
+  <title>Cucumber Reports (no 202008160006) - Steps Overview</title>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <p class="navbar-text navbar-left">Cucumber Report</p>
+        <ul class="nav navbar-nav navbar-right">
+          <li role="presentation">
+            <a href="overview-features.html">Features</a>
+          </li>
+          <li role="presentation">
+            <a href="overview-tags.html">Tags</a>
+          </li>
+          <li role="presentation" class="active">
+            <a href="overview-steps.html">Steps</a>
+          </li>
+          <li role="presentation">
+            <a href="overview-trends.html">Trends</a>
+          </li>
+          <li role="presentation">
+            <a href="overview-failures.html">Failures</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="col-md-5 col-md-offset-1">
+      <table class="table table-bordered" id="build-info">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Number</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>Ingress Conformance</td>
+            <td>202008160006</td>
+            <td>16 Aug 2020, 00:06</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3 col-md-offset-2"></div>
+  </div>
+  <div id="report-lead" class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results. step does not provide information about result then is not listed below. Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+    </div>
+  </div>
+  <div class="container-fluid" id="report">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <table id="tablesorter" class="stats-table table-hover">
+          <thead>
+            <tr class="header">
+              <th>Implementation</th>
+              <th>Occurrences</th>
+              <th>Average duration</th>
+              <th>Max duration</th>
+              <th>Total durations</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="location">feature.go:101</td>
+              <td>6</td>
+              <td class="duration" data-value="5032762128">5.032</td>
+              <td class="duration" data-value="5032762128">5.125</td>
+              <td class="duration" data-value="30196572772">30.196</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:102</td>
+              <td>22</td>
+              <td class="duration" data-value="814009">0.000</td>
+              <td class="duration" data-value="814009">0.012</td>
+              <td class="duration" data-value="17908202">0.017</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:106</td>
+              <td>16</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:110</td>
+              <td>16</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:112</td>
+              <td>6</td>
+              <td class="duration" data-value="4185339">0.004</td>
+              <td class="duration" data-value="4185339">0.015</td>
+              <td class="duration" data-value="25112036">0.025</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:114</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:118</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:120</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:122</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:124</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:126</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:128</td>
+              <td>3</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:130</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:132</td>
+              <td>3</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:134</td>
+              <td>6</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:55</td>
+              <td>16</td>
+              <td class="duration" data-value="16830505091">16.830</td>
+              <td class="duration" data-value="16830505091">19.332</td>
+              <td class="duration" data-value="269288081457">4:29.288</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:58</td>
+              <td>6</td>
+              <td class="duration" data-value="9823631">0.009</td>
+              <td class="duration" data-value="9823631">0.021</td>
+              <td class="duration" data-value="58941790">0.058</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:61</td>
+              <td>6</td>
+              <td class="duration" data-value="19365383">0.019</td>
+              <td class="duration" data-value="19365383">0.056</td>
+              <td class="duration" data-value="116192300">0.116</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:68</td>
+              <td>6</td>
+              <td class="duration" data-value="6583055537">6.583</td>
+              <td class="duration" data-value="6583055537">16.197</td>
+              <td class="duration" data-value="39498333223">39.498</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:71</td>
+              <td>6</td>
+              <td class="duration" data-value="3302772082">3.302</td>
+              <td class="duration" data-value="3302772082">5.165</td>
+              <td class="duration" data-value="19816632495">19.816</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:83</td>
+              <td>16</td>
+              <td class="duration" data-value="5011589696">5.011</td>
+              <td class="duration" data-value="5011589696">5.023</td>
+              <td class="duration" data-value="80185435141">1:20.185</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:89</td>
+              <td>6</td>
+              <td class="duration" data-value="552884206">0.552</td>
+              <td class="duration" data-value="552884206">0.833</td>
+              <td class="duration" data-value="3317305239">3.317</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:92</td>
+              <td>6</td>
+              <td class="duration" data-value="5012189707">5.012</td>
+              <td class="duration" data-value="5012189707">5.022</td>
+              <td class="duration" data-value="30073138246">30.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">feature.go:94</td>
+              <td>16</td>
+              <td class="duration" data-value="621976">0.000</td>
+              <td class="duration" data-value="621976">0.001</td>
+              <td class="duration" data-value="9951619">0.009</td>
+              <td class="failed">0.00%</td>
+            </tr>
+          </tbody>
+          <tfoot class="total">
+            <tr>
+              <td>24</td>
+              <td>199</td>
+              <td class="duration">2.374</td>
+              <td class="duration">4:29.288</td>
+              <td class="duration">7:52.603</td>
+              <td>Totals</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-default" id="footer">
+    <div class="container-fluid">
+      <p class="navbar-text navbar-right"><small>generate Cucumber HTML reports via:&nbsp;</small> <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> | <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> | <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> | <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a> &nbsp;&nbsp;</p>
+    </div>
+  </nav>
+</body>
+</html>
