@@ -2,7 +2,7 @@ name: Conformance
 
 on:
   schedule:
-    - cron:  '0 */12 * * *'
+    - cron: '0 */12 * * *'
   push:
     branches:
       - master
@@ -20,6 +20,7 @@ jobs:
       - name: Prepare environment
         run: |
           sudo bash -c 'curl -sSL https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.18.4/sonobuoy_0.18.4_linux_amd64.tar.gz | tar xvz -C /usr/local/bin/ sonobuoy'
+          # optional step to cleanup the generated HTML
           sudo bash -c 'apt update && apt install -y tidy'
 
       - name: Create Kubernetes cluster
@@ -29,16 +30,12 @@ jobs:
           config: .github/kind.yaml
           image: aledbf/kind-node:v1.19.0-rc.0
 
-      # this step can be replaced to check access for a cluster
+      # this step can be replaced with a KUBECONFIG file or a different ingress controller
       - name: Prepare cluster for testing
         run: |
           kubectl version
           echo "Installing ingress controller..."
-          kubectl apply -f https://gist.githubusercontent.com/aledbf/abb5ba8892d82f628971b7d03c4dfa89/raw/cf5b532c3d87008fee2e4d9c1acf8df9af89bf3d/ingress-conformance.yaml
-          # add flag to reduce the time to update ingress status
-          kubectl patch deployment -n ingress-nginx ingress-nginx-controller \
-            --type='json' \
-            -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/8", "value": "--status-update-interval=5" }]'
+          kubectl apply -f https://gist.githubusercontent.com/aledbf/abb5ba8892d82f628971b7d03c4dfa89/raw/3d4b8828eadd29216b4f35a3bb7a31d1480c9514/ingress-conformance.yaml
 
       - name: Run conformance tests
         run: |
@@ -46,8 +43,8 @@ jobs:
 
       - name: Generate reports
         run: |
+          # clone the gh-pages repository branch
           export TEMP_WORKTREE=$(mktemp -d)
-
           remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           git clone --branch=gh-pages --depth=1 "${remote_repo}" "${TEMP_WORKTREE}"
 
