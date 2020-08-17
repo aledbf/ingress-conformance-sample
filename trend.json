@@ -1,16 +1,16 @@
 {
-  "buildNumbers" : [ "202008171215" ],
+  "buildNumbers" : [ "202008171311" ],
   "passedFeatures" : [ 0 ],
   "failedFeatures" : [ 3 ],
   "totalFeatures" : [ 3 ],
   "passedScenarios" : [ 22 ],
   "failedScenarios" : [ 6 ],
   "totalScenarios" : [ 28 ],
-  "passedSteps" : [ 183 ],
+  "passedSteps" : [ 182 ],
   "failedSteps" : [ 6 ],
-  "skippedSteps" : [ 10 ],
+  "skippedSteps" : [ 11 ],
   "pendingSteps" : [ 0 ],
   "undefinedSteps" : [ 0 ],
   "totalSteps" : [ 199 ],
-  "durations" : [ 480073729013 ]
+  "durations" : [ 473721079979 ]
 }
