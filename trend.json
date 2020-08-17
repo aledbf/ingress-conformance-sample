@@ -1,16 +1,16 @@
 {
-  "buildNumbers" : [ "202008171557" ],
+  "buildNumbers" : [ "202008171750" ],
   "passedFeatures" : [ 0 ],
   "failedFeatures" : [ 3 ],
   "totalFeatures" : [ 3 ],
-  "passedScenarios" : [ 22 ],
-  "failedScenarios" : [ 6 ],
+  "passedScenarios" : [ 21 ],
+  "failedScenarios" : [ 7 ],
   "totalScenarios" : [ 28 ],
-  "passedSteps" : [ 182 ],
-  "failedSteps" : [ 6 ],
-  "skippedSteps" : [ 11 ],
+  "passedSteps" : [ 173 ],
+  "failedSteps" : [ 7 ],
+  "skippedSteps" : [ 19 ],
   "pendingSteps" : [ 0 ],
   "undefinedSteps" : [ 0 ],
   "totalSteps" : [ 199 ],
-  "durations" : [ 480124542771 ]
+  "durations" : [ 473948949285 ]
 }
