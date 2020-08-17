@@ -2,6 +2,8 @@
 
 Sample repository to show how to run the conformance suite and generate reports using github pages.
 
+### Website - https://aledbf.github.io/ingress-conformance-sample/
+
 ### Github action jobs:
 
 - *Prepare environment* downloads [sonobuoy](https://github.com/vmware-tanzu/sonobuoy) binary
@@ -10,8 +12,6 @@ Sample repository to show how to run the conformance suite and generate reports 
 - *Run conformance tests* using `sonobuoy run` and waits until finishes
 - *Generate reports* extracts cucumber json files from `sonobuoy retrieve` output and generates static html files
 
-
-**Website:** https://aledbf.github.io/ingress-conformance-sample/
 
 ### How I run the conformance test using a particular ingress controller?
 
@@ -23,4 +23,4 @@ Sample repository to show how to run the conformance suite and generate reports 
 where:
 
 - **INGRESS_CLASS:** name of the class that are valid for the ingress controller
-- **INGRESS_CONTROLLER_URL:** URL that will be used to install the ingress controller running `kubectl apply -f <URL>`
+- **INGRESS_CONTROLLER_URL:** URL to install the ingress controller using `kubectl apply -f <URL>`
