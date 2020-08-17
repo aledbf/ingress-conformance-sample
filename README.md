@@ -12,3 +12,15 @@ Sample repository to show how to run the conformance suite and generate reports 
 
 
 **Website:** https://aledbf.github.io/ingress-conformance-sample/
+
+### How I run the conformance test using a particular ingress controller?
+
+- Fork the repository -> **Click Settings** -> **Click Secrets**
+- Change secrets `INGRESS_CLASS` and `INGRESS_CONTROLLER_URL` values
+
+![Update secrets](./docs/secrets.png)
+
+where:
+
+- **INGRESS_CLASS:** name of the class that are valid for the ingress controller
+- **INGRESS_CONTROLLER_URL:** URL that will be used to install the ingress controller running `kubectl apply -f <URL>`

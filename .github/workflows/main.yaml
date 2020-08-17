@@ -12,7 +12,17 @@ jobs:
   conformance:
     runs-on: ubuntu-latest
 
+    env:
+      INGRESS_CLASS: ${{ secrets.INGRESS_CLASS }}
+      INGRESS_CONTROLLER_URL: ${{ secrets.INGRESS_CONTROLLER_URL }}
+
     steps:
+      - name: Prepare environment
+        run: |
+          if [ -z "${INGRESS_CONTROLLER_URL}" ]; then
+            echo "Secret variable INGRESS_CONTROLLER_URL must be set"
+            exit 1
+          fi
 
       - name: Checkout
         uses: actions/checkout@v1
@@ -35,7 +45,7 @@ jobs:
         run: |
           kubectl version
           echo "Installing ingress controller..."
-          kubectl apply -f https://gist.githubusercontent.com/aledbf/abb5ba8892d82f628971b7d03c4dfa89/raw/3d4b8828eadd29216b4f35a3bb7a31d1480c9514/ingress-conformance.yaml
+          kubectl apply -f "${INGRESS_CONTROLLER_URL}"
 
       - name: Run conformance tests
         run: |

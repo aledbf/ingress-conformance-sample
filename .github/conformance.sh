@@ -18,12 +18,17 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+if [ -z "${INGRESS_CLASS}" ]; then
+  echo "Environment variable INGRESS_CLASS must be set"
+  exit 1
+fi
+
 echo "Running... (can take some time)"
 
 sonobuoy run \
   --skip-preflight \
   --kube-conformance-image=aledbf/ingress-controller-conformance:0.16 \
-  --plugin-env e2e.INGRESS_CLASS=nginx
+  --plugin-env e2e.INGRESS_CLASS=${INGRESS_CLASS}
 
 sleep 60
 
