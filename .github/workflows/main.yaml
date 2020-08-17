@@ -49,3 +49,9 @@ jobs:
           git clone --branch=gh-pages --depth=1 "${remote_repo}" "${TEMP_WORKTREE}"
 
           .github/generate-reports.sh
+
+      - name: Upload cucumber json files
+        uses: actions/upload-artifact@v2
+        with:
+          name: cucumber-output
+          path: /tmp/reports/*

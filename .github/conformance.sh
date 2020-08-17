@@ -35,3 +35,7 @@ until sonobuoy logs | grep -m 1 "Results available"; do : ; done
 
 # Retrieve the result file to local system
 sonobuoy retrieve
+
+mkdir -p /tmp/reports
+tar zxpvf *_sonobuoy_*.tar.gz --wildcards "*-report.json"
+mv plugins/e2e/results/global/* /tmp/reports

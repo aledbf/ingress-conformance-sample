@@ -23,14 +23,7 @@ if [ ! -f "${TEMP_WORKTREE}/trend.json" ]; then
 fi
 
 echo "Extracting reports from sonobuoy"
-SONOBUOY_REPORTS=$(mktemp -d)
-
-pushd "${SONOBUOY_REPORTS}" > /dev/null
-
-sonobuoy retrieve
-tar zxpvf *_sonobuoy_*.tar.gz --wildcards "*-report.json"
-
-popd > /dev/null
+SONOBUOY_REPORTS=/tmp/reports
 
 TEMP_CONTENT=$(mktemp -d)
 # copy trend json file
@@ -40,7 +33,7 @@ docker run \
   -e BUILD="$(date -u +'%Y%m%d%H%M')" \
   -e INPUT_DIRECTORY=/input \
   -e OUTPUT_DIRECTORY=/output \
-  -v "${SONOBUOY_REPORTS}/plugins/e2e/results/global":/input:ro \
+  -v "${SONOBUOY_REPORTS}":/input:ro \
   -v "${TEMP_CONTENT}":/output \
   -u "$(id -u):$(id -g)" \
   aledbf/reports-builder:0.0
