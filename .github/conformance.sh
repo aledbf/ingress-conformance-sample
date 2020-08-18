@@ -27,7 +27,7 @@ echo "Running... (can take some time)"
 
 sonobuoy run \
   --skip-preflight \
-  --kube-conformance-image=aledbf/ingress-controller-conformance:0.16 \
+  --kube-conformance-image=aledbf/ingress-controller-conformance:0.17 \
   --plugin-env e2e.INGRESS_CLASS=${INGRESS_CLASS}
 
 sleep 60
