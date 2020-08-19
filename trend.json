@@ -1,5 +1,5 @@
 {
-  "buildNumbers" : [ "202008190026" ],
+  "buildNumbers" : [ "202008191222" ],
   "passedFeatures" : [ 1 ],
   "failedFeatures" : [ 2 ],
   "totalFeatures" : [ 3 ],
@@ -12,5 +12,5 @@
   "pendingSteps" : [ 0 ],
   "undefinedSteps" : [ 0 ],
   "totalSteps" : [ 199 ],
-  "durations" : [ 818291085930 ]
+  "durations" : [ 828533018969 ]
 }
