@@ -18,25 +18,24 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-if [ ! -f "${TEMP_WORKTREE}/trend.json" ]; then
-  touch "${TEMP_WORKTREE}/trend.json"
-fi
-
 echo "Extracting reports from sonobuoy"
 SONOBUOY_REPORTS=/tmp/reports
 
+INGRESS_CONTROLLER=${INGRESS_CONTROLLER:-'N/A'}
+CONTROLLER_VERSION=${CONTROLLER_VERSION:-'N/A'}
+
 TEMP_CONTENT=$(mktemp -d)
-# copy trend json file
-cp -f "${TEMP_WORKTREE}/trend.json" "${TEMP_CONTENT}"
 
 docker run \
   -e BUILD="$(date -u +'%Y%m%d%H%M')" \
   -e INPUT_DIRECTORY=/input \
   -e OUTPUT_DIRECTORY=/output \
+  -e INGRESS_CONTROLLER="${INGRESS_CONTROLLER}" \
+  -e CONTROLLER_VERSION="${CONTROLLER_VERSION}" \
   -v "${SONOBUOY_REPORTS}":/input:ro \
   -v "${TEMP_CONTENT}":/output \
   -u "$(id -u):$(id -g)" \
-  aledbf/reports-builder:0.0
+  aledbf/reports-builder:0.1
   # replace image with staging from gcr after https://github.com/kubernetes/test-infra/pull/18874
 
 pushd "${TEMP_WORKTREE}" > /dev/null
