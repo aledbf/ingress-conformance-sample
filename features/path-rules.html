@@ -222,6 +222,12 @@ body {
 	padding: 0;
 	margin: 0;
 }
+
+kbd {
+	background-color: lightgrey;
+	color: black;
+}
+
   </style>
 </head>
 <body>
@@ -313,12 +319,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -359,12 +364,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -398,12 +402,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://exact-path-rules/foo"        
+        I send a <kbd>GET</kbd> request to <kbd>http://exact-path-rules/foo</kbd>        
         
       </div>
       
@@ -437,12 +440,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -476,12 +478,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "foo-exact" service        
+        the response must be served by the <kbd>foo-exact</kbd> service        
         
       </div>
       
@@ -515,12 +516,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/foo"        
+        the request path must be <kbd>/foo</kbd>        
         
       </div>
       
@@ -585,12 +585,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -631,12 +630,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -670,12 +668,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://exact-path-rules/foo/"        
+        I send a <kbd>GET</kbd> request to <kbd>http://exact-path-rules/foo/</kbd>        
         
       </div>
       
@@ -709,12 +706,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 404        
+        the response status-code must be <kbd>404</kbd>        
         
       </div>
       
@@ -779,12 +775,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -825,206 +820,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
-                <span class="duration">10s</span>
-                
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
-                
-                <span class="duration">0s</span>
-                
-
-                I send a "GET" request to "http://exact-path-rules/FOO"        
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                
-                <span class="duration">0s</span>
-                
-
-                the response status-code must be 404        
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="collapse" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
-        Scenario: <span class="text-muted">An Ingress with exact path rules should not match any other label</span>
-      </a>
-      <p>    (exact /foo does not match request /bar)</p>
-    </div>
-
-    <div id="scenario3" class="mt-3 collapse show">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                
-                <span class="duration">30s</span>
-                
-
-                an Ingress resource in a new random namespace        
-        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
-        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
-          <code>
-            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
-          </code>
-        </div>
-        
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">5s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -1058,12 +858,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://exact-path-rules/bar"        
+        I send a <kbd>GET</kbd> request to <kbd>http://exact-path-rules/FOO</kbd>        
         
       </div>
       
@@ -1097,12 +896,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 404        
+        the response status-code must be <kbd>404</kbd>        
         
       </div>
       
@@ -1148,6 +946,196 @@ body {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
+        Scenario: <span class="text-muted">An Ingress with exact path rules should not match any other label</span>
+      </a>
+      <p>    (exact /foo does not match request /bar)</p>
+    </div>
+
+    <div id="scenario3" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given </span>
+                <span class="duration">30s</span>
+        
+                
+        an Ingress resource in a new random namespace        
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          <code>
+            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then </span>
+                <span class="duration">10s</span>
+        
+                
+        The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When </span>
+                <span class="duration">0s</span>
+        
+                
+        I send a <kbd>GET</kbd> request to <kbd>http://exact-path-rules/bar</kbd>        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then </span>
+                <span class="duration">0s</span>
+        
+                
+        the response status-code must be <kbd>404</kbd>        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
       <a data-toggle="collapse" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with prefix path rules should send traffic to the matching backend service</span>
       </a>
@@ -1167,12 +1155,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -1213,12 +1200,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -1252,12 +1238,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/foo"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/foo</kbd>        
         
       </div>
       
@@ -1291,12 +1276,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -1330,12 +1314,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "foo-prefix" service        
+        the response must be served by the <kbd>foo-prefix</kbd> service        
         
       </div>
       
@@ -1369,12 +1352,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/foo"        
+        the request path must be <kbd>/foo</kbd>        
         
       </div>
       
@@ -1400,7 +1382,7 @@ body {
     </div>
   </div>
   <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 41s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -1439,12 +1421,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -1485,12 +1466,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -1524,12 +1504,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/foo/"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/foo/</kbd>        
         
       </div>
       
@@ -1563,12 +1542,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -1602,12 +1580,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "foo-prefix" service        
+        the response must be served by the <kbd>foo-prefix</kbd> service        
         
       </div>
       
@@ -1641,12 +1618,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/foo/"        
+        the request path must be <kbd>/foo/</kbd>        
         
       </div>
       
@@ -1711,12 +1687,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -1757,12 +1732,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -1796,12 +1770,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/FOO"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/FOO</kbd>        
         
       </div>
       
@@ -1835,12 +1808,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 404        
+        the response status-code must be <kbd>404</kbd>        
         
       </div>
       
@@ -1905,12 +1877,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -1951,12 +1922,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -1990,12 +1960,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/aaa/bbb"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/aaa/bbb</kbd>        
         
       </div>
       
@@ -2029,12 +1998,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -2068,12 +2036,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "aaa-slash-bbb-prefix" service        
+        the response must be served by the <kbd>aaa-slash-bbb-prefix</kbd> service        
         
       </div>
       
@@ -2107,12 +2074,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/aaa/bbb"        
+        the request path must be <kbd>/aaa/bbb</kbd>        
         
       </div>
       
@@ -2138,7 +2104,7 @@ body {
     </div>
   </div>
   <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 41s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -2177,12 +2143,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -2223,12 +2188,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -2262,12 +2226,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/aaa/bbb/ccc"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/aaa/bbb/ccc</kbd>        
         
       </div>
       
@@ -2301,12 +2264,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -2340,12 +2302,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "aaa-slash-bbb-prefix" service        
+        the response must be served by the <kbd>aaa-slash-bbb-prefix</kbd> service        
         
       </div>
       
@@ -2379,12 +2340,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/aaa/bbb/ccc"        
+        the request path must be <kbd>/aaa/bbb/ccc</kbd>        
         
       </div>
       
@@ -2449,12 +2409,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -2495,12 +2454,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -2534,12 +2492,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/aaa/ccc"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/aaa/ccc</kbd>        
         
       </div>
       
@@ -2573,12 +2530,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -2612,12 +2568,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "aaa-prefix" service        
+        the response must be served by the <kbd>aaa-prefix</kbd> service        
         
       </div>
       
@@ -2651,12 +2606,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/aaa/ccc"        
+        the request path must be <kbd>/aaa/ccc</kbd>        
         
       </div>
       
@@ -2721,12 +2675,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -2767,12 +2720,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">5s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -2806,12 +2758,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/aaaccc"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/aaaccc</kbd>        
         
       </div>
       
@@ -2844,12 +2795,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 404        
+        the response status-code must be <kbd>404</kbd>        
         
       </div>
       
@@ -2923,12 +2873,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -2969,12 +2918,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -3008,12 +2956,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://prefix-path-rules/foo/"        
+        I send a <kbd>GET</kbd> request to <kbd>http://prefix-path-rules/foo/</kbd>        
         
       </div>
       
@@ -3047,12 +2994,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -3086,12 +3032,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "foo-prefix" service        
+        the response must be served by the <kbd>foo-prefix</kbd> service        
         
       </div>
       
@@ -3125,12 +3070,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/foo/"        
+        the request path must be <kbd>/foo/</kbd>        
         
       </div>
       
@@ -3195,12 +3139,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -3241,12 +3184,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -3280,12 +3222,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://mixed-path-rules/foo"        
+        I send a <kbd>GET</kbd> request to <kbd>http://mixed-path-rules/foo</kbd>        
         
       </div>
       
@@ -3319,12 +3260,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -3358,12 +3298,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "foo-exact" service        
+        the response must be served by the <kbd>foo-exact</kbd> service        
         
       </div>
       
@@ -3397,12 +3336,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/foo"        
+        the request path must be <kbd>/foo</kbd>        
         
       </div>
       
@@ -3467,12 +3405,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -3513,12 +3450,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -3552,12 +3488,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://trailing-slash-path-rules/aaa/bbb"        
+        I send a <kbd>GET</kbd> request to <kbd>http://trailing-slash-path-rules/aaa/bbb</kbd>        
         
       </div>
       
@@ -3591,12 +3526,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -3630,12 +3564,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "aaa-slash-bbb-slash-prefix" service        
+        the response must be served by the <kbd>aaa-slash-bbb-slash-prefix</kbd> service        
         
       </div>
       
@@ -3668,12 +3601,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/aaa/bbb"        
+        the request path must be <kbd>/aaa/bbb</kbd>        
         
       </div>
       
@@ -3747,12 +3679,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -3793,12 +3724,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -3832,12 +3762,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://trailing-slash-path-rules/aaa/bbb/"        
+        I send a <kbd>GET</kbd> request to <kbd>http://trailing-slash-path-rules/aaa/bbb/</kbd>        
         
       </div>
       
@@ -3871,12 +3800,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 200        
+        the response status-code must be <kbd>200</kbd>        
         
       </div>
       
@@ -3910,12 +3838,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response must be served by the "aaa-slash-bbb-slash-prefix" service        
+        the response must be served by the <kbd>aaa-slash-bbb-slash-prefix</kbd> service        
         
       </div>
       
@@ -3949,12 +3876,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">And</span>
-                
+        <span class="keyword highlight">And </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the request path must be "/aaa/bbb/"        
+        the request path must be <kbd>/aaa/bbb/</kbd>        
         
       </div>
       
@@ -4019,12 +3945,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Given</span>
-                
+        <span class="keyword highlight">Given </span>
                 <span class="duration">30s</span>
+        
                 
-
-                an Ingress resource in a new random namespace        
+        an Ingress resource in a new random namespace        
         <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
         <div id="path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
@@ -4065,12 +3990,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">10s</span>
+        
                 
-
-                The Ingress status shows the IP address or FQDN where it is exposed        
+        The Ingress status shows the IP address or FQDN where it is exposed        
         
       </div>
       
@@ -4104,12 +4028,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">When</span>
-                
+        <span class="keyword highlight">When </span>
                 <span class="duration">0s</span>
+        
                 
-
-                I send a "GET" request to "http://trailing-slash-path-rules/foo"        
+        I send a <kbd>GET</kbd> request to <kbd>http://trailing-slash-path-rules/foo</kbd>        
         
       </div>
       
@@ -4142,12 +4065,11 @@ body {
       
       
       <div class="text">
-        <span class="keyword highlight">Then</span>
-                
+        <span class="keyword highlight">Then </span>
                 <span class="duration">0s</span>
+        
                 
-
-                the response status-code must be 404        
+        the response status-code must be <kbd>404</kbd>        
         
       </div>
       
