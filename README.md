@@ -24,3 +24,5 @@ where:
 
 - **INGRESS_CLASS:** name of the class that are valid for the ingress controller
 - **INGRESS_CONTROLLER_URL:** URL to install the ingress controller using `kubectl apply -f <URL>`
+- **INGRESS_CONTROLLER:** name of the ingress controller (default `N/A`)
+- **CONTROLLER_VERSION:** version of the ingress controller (default `N/A`)
