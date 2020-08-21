@@ -186,12 +186,11 @@
   }
 
   .step {
-        border-radius: 50%;
         color: #ffffff;
         display: inline-block;
         font-size: 14px;
         height: 30px;
-        margin-right: 5px;
+        margin-right: 1px;
         padding: 5px;
         text-align: center;
         width: 30px;
@@ -255,13 +254,13 @@
                   <td>
                     <p data-toggle="tooltip" data-placement="left" title="Features passed">Passed</p>
                   </td>
-                  <td class="percentage">33.33%</td>
+                  <td class="percentage">0.00%</td>
                 </tr>
                 <tr>
                   <td>
                     <p data-toggle="tooltip" data-placement="left" title="Features failed">Failed</p>
                   </td>
-                  <td class="percentage">66.67%</td>
+                  <td class="percentage">100.00%</td>
                 </tr>
               </tbody>
             </table>
@@ -269,7 +268,7 @@
         </div>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-4 offset-lg-1">
-        <div class="row">
+        <div class="row justify-content-end">
           <div class="col-sm-4 col-md-6 col-lg-4">
             <canvas id="scenario-chart"></canvas>
           </div>
@@ -287,13 +286,13 @@
                   <td>
                     <p data-toggle="tooltip" data-placement="left" title="Scenario passed">Passed</p>
                   </td>
-                  <td class="percentage">82.14%</td>
+                  <td class="percentage">78.57%</td>
                 </tr>
                 <tr>
                   <td>
                     <p data-toggle="tooltip" data-placement="left" title="Scenario failed">Failed</p>
                   </td>
-                  <td class="percentage">17.86%</td>
+                  <td class="percentage">21.43%</td>
                 </tr>
               </tbody>
             </table><!--p><strong>Total duration:</strong> <feature.time></p-->
@@ -322,11 +321,11 @@
                 <a href="features/default-backend.html">Default backend</a>
               </td>
               <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
-              <td class="text-center"><i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Passed">check_circle</i></td>
+              <td class="text-center"><i class="material-icons text-danger" data-toggle="tooltip" data-placement="top" title="Failed">error</i></td>
               <td class="text-right">6</td>
-              <td class="text-right">6</td>
-              <td class="text-right none">0</td>
-              <td>1m1s</td>
+              <td class="text-right">5</td>
+              <td class="text-right">1</td>
+              <td>1m16s</td>
             </tr>
             <tr>
               <td>
@@ -337,7 +336,7 @@
               <td class="text-right">6</td>
               <td class="text-right">4</td>
               <td class="text-right">2</td>
-              <td>1m59s</td>
+              <td>1m58s</td>
             </tr>
             <tr>
               <td>
@@ -348,7 +347,7 @@
               <td class="text-right">16</td>
               <td class="text-right">13</td>
               <td class="text-right">3</td>
-              <td>10m36s</td>
+              <td>10m38s</td>
             </tr>
           </tbody>
         </table>
@@ -387,8 +386,8 @@
   datasets: [
   {
   data: [
-  1,
-  2,
+  0,
+  3,
   0,
   0,
   0,
@@ -426,8 +425,8 @@
   datasets: [
   {
   data: [
-  23,
-  5,
+  22,
+  6,
   0,
   0,
   0,
