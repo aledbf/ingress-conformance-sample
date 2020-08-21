@@ -219,7 +219,7 @@ code {
   <div class="container-fluid">
     <div class="row mb-3 p-3">
       <nav class="navbar navbar-light text-light bg-dark fixed-top">
-        <a href="/" class="btn btn-light active" role="button" aria-pressed="true">Home</a>
+        <a href="../index.html" class="btn btn-light active" role="button" aria-pressed="true">Home</a>
         <div class="mx-auto">
           <strong>Ingress controller:</strong><em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong><em class="pl-1 pr-3">v0.34.1</em>
         </div>
@@ -265,13 +265,13 @@ code {
           <td>
             <p data-toggle="tooltip" data-placement="left" title="Scenario passed">Passed</p>
           </td>
-          <td class="percentage">50.00%</td>
+          <td class="percentage">66.67%</td>
         </tr>
         <tr>
           <td>
             <p data-toggle="tooltip" data-placement="left" title="Scenario failed">Failed</p>
           </td>
-          <td class="percentage">50.00%</td>
+          <td class="percentage">33.33%</td>
       </tbody>
     </table>
     <!--p><strong>Total duration:</strong> <feature.time></p-->
@@ -287,7 +287,7 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-danger">
+      <a data-toggle="" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a host rule should send TLS traffic to the matching backend service</span>
       </a>
       <p>    (host foo.bar.com matches request foo.bar.com)</p>
@@ -393,7 +393,7 @@ code {
         
         
         
-        <span class="duration">20s</span>
+        <span class="duration">10s</span>
         
       </div>
       
@@ -458,8 +458,9 @@ code {
     <div class="scenario-step-container">
       
       
-      <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
-        <i class="material-icons text-danger">error</i>
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
       </div>
       
       
@@ -468,14 +469,12 @@ code {
                 I send a "GET" request to "https://foo.bar.com"        
         
         
-        <span class="duration">1s</span>
+        <span class="duration">0s</span>
         
       </div>
       
       
       
-      <a class="btn text-danger" href="#error04-error" data-toggle="collapse">+Show Error</a>
-      
       
       
       
@@ -483,11 +482,6 @@ code {
       
     </div>
     
-    
-    <div id="error04-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
-      <pre class="info text-white p-0 m-0">Get "https://10.102.106.174/": dial tcp 10.102.106.174:443: connect: connection refused</pre>
-    </div>
     
     
     
@@ -502,8 +496,9 @@ code {
     <div class="scenario-step-container">
       
       
-      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
-        <i class="material-icons skipped-color">double_arrow</i>
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
       </div>
       
       
@@ -539,8 +534,9 @@ code {
     <div class="scenario-step-container">
       
       
-      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
-        <i class="material-icons skipped-color">double_arrow</i>
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
       </div>
       
       
@@ -576,8 +572,9 @@ code {
     <div class="scenario-step-container">
       
       
-      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
-        <i class="material-icons skipped-color">double_arrow</i>
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
       </div>
       
       
@@ -613,8 +610,9 @@ code {
     <div class="scenario-step-container">
       
       
-      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
-        <i class="material-icons skipped-color">double_arrow</i>
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
       </div>
       
       
@@ -648,19 +646,15 @@ code {
     
     </div>
   </div>
-  <div class="card-footer p-1 border-danger pl-3 pr-3">
-    Duration: 26s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 16s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
       
-      <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">4</span>
       
       
-      <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">9</span>
       
       
     </div>
@@ -1480,7 +1474,7 @@ code {
     
     <div id="error34-error"
       class="scenario-step-collapse collapse bg-danger p-2">
-      <pre class="info text-white p-0 m-0">Get "https://10.102.106.174/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
+      <pre class="info text-white p-0 m-0">Get "https://10.110.93.23/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
     </div>
     
     
@@ -1691,7 +1685,7 @@ code {
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
         
-        <span class="duration">0s</span>
+        <span class="duration">1s</span>
         
       </div>
       
@@ -1774,7 +1768,7 @@ code {
                 The Ingress status shows the IP address or FQDN where it is exposed        
         
         
-        <span class="duration">5s</span>
+        <span class="duration">10s</span>
         
       </div>
       
@@ -1882,7 +1876,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-danger pl-3 pr-3">
-    Duration: 16s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 21s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -2048,7 +2042,7 @@ code {
                 The Ingress status shows the IP address or FQDN where it is exposed        
         
         
-        <span class="duration">10s</span>
+        <span class="duration">5s</span>
         
       </div>
       
@@ -2150,7 +2144,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 20s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 16s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -2204,8 +2198,8 @@ code {
           datasets: [
             {
               data: [
-                3,
-                3,
+                4,
+                2,
                 0,
                 0,
                 0,
