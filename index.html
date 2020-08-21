@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="//unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&amp;display=swap">
   <style type="text/css">
-
   /* colors */
   .ambiguous-color {
         color: #E74C3C !important;
@@ -209,20 +208,27 @@
   }
 
   .card {
-        border: 1px solid rgba(0,0,0,.12);
+        border: 1px solid rgba(0, 0, 0, .12);
+  }
+
+  body {
+        min-height: 75rem;
+        padding-top: 4.5rem;
+  }
+
+  .scenario-step-collapse {
+        padding: 0;
+        margin: 0;
   }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row mb-3 p-3">
-      <nav class="navbar navbar-light text-light bg-dark fixed-top">
-        <a href="/" class="btn btn-light disabled" role="button" aria-pressed="true">Home</a>
-        <div class="mx-auto">
-          <strong>Ingress controller:</strong><em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong><em class="pl-1 pr-3">v0.34.1</em>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark text-white">
+    <div class="mx-auto">
+      <strong>Ingress controller:</strong> <em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong> <em class="pl-1 pr-3">v0.34.1</em>
     </div>
+  </nav>
+  <main role="main" class="container">
     <div class="row mb-3 p-3">
       <div class="col-sm-6 col-md-6 col-lg-4 offset-lg-1">
         <div class="row">
@@ -232,7 +238,7 @@
           <div class="col-sm-8 col-md-6">
             <h5>Features</h5>
             <table class="table table-bordered table-striped thead-dark table-sm">
-              <thead>
+              <thead class="thead-dark">
                 <tr>
                   <th>Status</th>
                   <th>Progress</th>
@@ -264,7 +270,7 @@
           <div class="col-sm-8 col-md-6">
             <h5>Scenarios</h5>
             <table class="table table-bordered table-striped thead-dark table-sm">
-              <thead>
+              <thead class="thead-dark">
                 <tr>
                   <th>Status</th>
                   <th>Progress</th>
@@ -291,57 +297,55 @@
     </div>
     <div class="row mb-3 p-3">
       <div class="col">
-        <div class="w-75 m-auto">
-          <h2 class="mb-3">Features overview</h2>
-          <table class="table table-striped table-bordered dt-responsive nowrap">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Feature name</th>
-                <th scope="col"></th>
-                <th scope="col">Status</th>
-                <th scope="col">Total</th>
-                <th scope="col">Passed</th>
-                <th scope="col">Failed</th>
-                <th scope="col">Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <a href="features/default-backend.html">Default backend</a>
-                </td>
-                <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
-                <td class="text-center"><i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Passed">check_circle</i></td>
-                <td class="text-right">6</td>
-                <td class="text-right">6</td>
-                <td class="text-right none">0</td>
-                <td>1m5s</td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="features/host-rules.html">Host rules</a>
-                </td>
-                <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
-                <td class="text-center"><i class="material-icons text-danger" data-toggle="tooltip" data-placement="top" title="Failed">error</i></td>
-                <td class="text-right">6</td>
-                <td class="text-right">4</td>
-                <td class="text-right">2</td>
-                <td>1m59s</td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="features/path-rules.html">Path rules</a>
-                </td>
-                <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
-                <td class="text-center"><i class="material-icons text-danger" data-toggle="tooltip" data-placement="top" title="Failed">error</i></td>
-                <td class="text-right">16</td>
-                <td class="text-right">13</td>
-                <td class="text-right">3</td>
-                <td>10m40s</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h2 class="mb-3">Features overview</h2>
+        <table class="table table-striped table-bordered dt-responsive nowrap">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Feature name</th>
+              <th scope="col"></th>
+              <th scope="col">Status</th>
+              <th scope="col">Total</th>
+              <th scope="col">Passed</th>
+              <th scope="col">Failed</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="features/default-backend.html">Default backend</a>
+              </td>
+              <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
+              <td class="text-center"><i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Passed">check_circle</i></td>
+              <td class="text-right">6</td>
+              <td class="text-right">6</td>
+              <td class="text-right none">0</td>
+              <td>1m5s</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="features/host-rules.html">Host rules</a>
+              </td>
+              <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
+              <td class="text-center"><i class="material-icons text-danger" data-toggle="tooltip" data-placement="top" title="Failed">error</i></td>
+              <td class="text-right">6</td>
+              <td class="text-right">4</td>
+              <td class="text-right">2</td>
+              <td>1m54s</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="features/path-rules.html">Path rules</a>
+              </td>
+              <td class="text-center"><i class="material-icons" data-toggle="tooltip" data-placement="top" title="@sig-network @conformance @release-1.19">bookmarks</i></td>
+              <td class="text-center"><i class="material-icons text-danger" data-toggle="tooltip" data-placement="top" title="Failed">error</i></td>
+              <td class="text-right">16</td>
+              <td class="text-right">13</td>
+              <td class="text-right">3</td>
+              <td>10m42s</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="row">
@@ -349,7 +353,7 @@
         <p><a href="https://github.com/kubernetes-sigs/ingress-controller-conformance">Kubernetes ingress controller conformance</a></p>
       </div>
     </div>
-  </div>
+  </main>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script> 
   <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script> 

@@ -10,8 +10,7 @@
     integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" />
   <style type="text/css">
-    
-/* colors */
+    /* colors */
 .ambiguous-color {
 	color: #E74C3C !important;
 }
@@ -211,21 +210,29 @@ code {
 }
 
 .card {
-	border: 1px solid rgba(0,0,0,.12);
+	border: 1px solid rgba(0, 0, 0, .12);
+}
+
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+}
+
+.scenario-step-collapse {
+	padding: 0;
+	margin: 0;
 }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row mb-3 p-3">
-      <nav class="navbar navbar-light text-light bg-dark fixed-top">
-        <a href="../index.html" class="btn btn-light active" role="button" aria-pressed="true">Home</a>
-        <div class="mx-auto">
-          <strong>Ingress controller:</strong><em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong><em class="pl-1 pr-3">v0.34.1</em>
-        </div>
-      </nav>
-    </div>
-
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark text-white">
+     <a href="../index.html" class="btn btn-light active mr-4" role="button" aria-pressed="true">Home</a>
+     <div class="mx-auto">
+        <strong>Ingress controller:</strong> <em class="pl-1 pr-3">ingress-nginx</em>
+        <strong>version:</strong> <em class="pl-1 pr-3">v0.34.1</em>
+      </div>
+   </nav>
+   <main role="main" class="container">
     <div class="row mb-3 p-3">
       <div class="col-sm-12 col-md-6 ">
         
@@ -254,7 +261,7 @@ code {
 <div class="col-sm-8 col-md-6">
   <h5>Scenarios</h5>
     <table class="table table-bordered table-striped thead-dark table-sm">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th>Status</th>
           <th>Progress</th>
@@ -287,13 +294,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with exact path rules should send traffic to the matching backend service</span>
       </a>
       <p>    (exact /foo matches request /foo)</p>
     </div>
 
-    <div id="scenario0" class="mt-3">
+    <div id="scenario0" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -307,17 +314,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-exact-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -352,10 +360,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -390,10 +399,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://exact-path-rules/foo"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -428,11 +438,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -466,11 +477,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "foo-exact" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -504,10 +516,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/foo"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -553,13 +566,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with exact path rules should not match requests with trailing slash</span>
       </a>
       <p>    (exact /foo does not match request /foo/)</p>
     </div>
 
-    <div id="scenario1" class="mt-3">
+    <div id="scenario1" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -573,17 +586,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-requests-with-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -618,10 +632,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -656,10 +671,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://exact-path-rules/foo/"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -694,10 +710,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -743,13 +760,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with exact path rules should be case sensitive</span>
       </a>
       <p>    (exact /foo does not match request /FOO)</p>
     </div>
 
-    <div id="scenario2" class="mt-3">
+    <div id="scenario2" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -763,17 +780,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-exact-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -808,10 +826,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -846,10 +865,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://exact-path-rules/FOO"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -884,10 +904,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -933,13 +954,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with exact path rules should not match any other label</span>
       </a>
       <p>    (exact /foo does not match request /bar)</p>
     </div>
 
-    <div id="scenario3" class="mt-3">
+    <div id="scenario3" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -953,17 +974,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-exact-path-rules-should-not-match-any-other-label-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -998,10 +1020,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1036,11 +1059,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://exact-path-rules/bar"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1074,998 +1098,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
-        Scenario: <span class="text-muted">An Ingress with prefix path rules should send traffic to the matching backend service</span>
-      </a>
-      <p>    (prefix /foo matches request /foo)</p>
-    </div>
-
-    <div id="scenario4" class="mt-3">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
-          <code>
-            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
-          </code>
-        </div>
-        
-        
-        
-        <span class="duration">30s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
-                I send a "GET" request to "http://prefix-path-rules/foo"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                the response status-code must be 200        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response must be served by the "foo-prefix" service        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request path must be "/foo"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
-        Scenario: <span class="text-muted">An Ingress with prefix path rules should ignore the request trailing slash and send traffic to the matching backend service</span>
-      </a>
-      <p>    (prefix /foo matches request /foo/)</p>
-    </div>
-
-    <div id="scenario5" class="mt-3">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
-          <code>
-            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
-          </code>
-        </div>
-        
-        
-        
-        <span class="duration">30s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
-                I send a "GET" request to "http://prefix-path-rules/foo/"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                the response status-code must be 200        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response must be served by the "foo-prefix" service        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request path must be "/foo/"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="" href="#scenario6" aria-expanded="true" aria-controls="scenario6" class="h5 text-success">
-        Scenario: <span class="text-muted">An Ingress with prefix path rules should be case sensitive</span>
-      </a>
-      <p>    (prefix /foo does not match request /FOO)</p>
-    </div>
-
-    <div id="scenario6" class="mt-3">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
-          <code>
-            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
-          </code>
-        </div>
-        
-        
-        
-        <span class="duration">30s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
-                I send a "GET" request to "http://prefix-path-rules/FOO"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="" href="#scenario7" aria-expanded="true" aria-controls="scenario7" class="h5 text-success">
-        Scenario: <span class="text-muted">An Ingress with prefix path rules should match multiple labels, match the longest path, and send traffic to the matching backend service</span>
-      </a>
-      <p>    (prefix /aaa/bbb matches request /aaa/bbb)</p>
-    </div>
-
-    <div id="scenario7" class="mt-3">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
-          <code>
-            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
-          </code>
-        </div>
-        
-        
-        
-        <span class="duration">30s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
-                I send a "GET" request to "http://prefix-path-rules/aaa/bbb"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                the response status-code must be 200        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response must be served by the "aaa-slash-bbb-prefix" service        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request path must be "/aaa/bbb"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2098,6 +1135,278 @@ code {
       
       
       
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
+        Scenario: <span class="text-muted">An Ingress with prefix path rules should send traffic to the matching backend service</span>
+      </a>
+      <p>    (prefix /foo matches request /foo)</p>
+    </div>
+
+    <div id="scenario4" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
+                an Ingress resource in a new random namespace        
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          <code>
+            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
+                The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
+                I send a "GET" request to "http://prefix-path-rules/foo"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response status-code must be 200        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response must be served by the "foo-prefix" service        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request path must be "/foo"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 41s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
       <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
       
       
@@ -2111,13 +1420,751 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario8" aria-expanded="true" aria-controls="scenario8" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
+        Scenario: <span class="text-muted">An Ingress with prefix path rules should ignore the request trailing slash and send traffic to the matching backend service</span>
+      </a>
+      <p>    (prefix /foo matches request /foo/)</p>
+    </div>
+
+    <div id="scenario5" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
+                an Ingress resource in a new random namespace        
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          <code>
+            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
+                The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
+                I send a "GET" request to "http://prefix-path-rules/foo/"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response status-code must be 200        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response must be served by the "foo-prefix" service        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request path must be "/foo/"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario6" aria-expanded="true" aria-controls="scenario6" class="h5 text-success">
+        Scenario: <span class="text-muted">An Ingress with prefix path rules should be case sensitive</span>
+      </a>
+      <p>    (prefix /foo does not match request /FOO)</p>
+    </div>
+
+    <div id="scenario6" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
+                an Ingress resource in a new random namespace        
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-be-case-sensitive-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          <code>
+            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
+                The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
+                I send a "GET" request to "http://prefix-path-rules/FOO"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response status-code must be 404        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">4</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario7" aria-expanded="true" aria-controls="scenario7" class="h5 text-success">
+        Scenario: <span class="text-muted">An Ingress with prefix path rules should match multiple labels, match the longest path, and send traffic to the matching backend service</span>
+      </a>
+      <p>    (prefix /aaa/bbb matches request /aaa/bbb)</p>
+    </div>
+
+    <div id="scenario7" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
+                an Ingress resource in a new random namespace        
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          <code>
+            <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
+                The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
+                I send a "GET" request to "http://prefix-path-rules/aaa/bbb"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response status-code must be 200        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response must be served by the "aaa-slash-bbb-prefix" service        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request path must be "/aaa/bbb"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 41s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario8" aria-expanded="true" aria-controls="scenario8" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with prefix path rules should match multiple labels, match the longest path, and subpaths and send traffic to the matching backend service</span>
       </a>
       <p>    (prefix /aaa/bbb matches request /aaa/bbb/ccc)</p>
     </div>
 
-    <div id="scenario8" class="mt-3">
+    <div id="scenario8" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2131,17 +2178,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-multiple-labels--match-the-longest-path--and-subpaths-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -2176,10 +2224,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -2214,10 +2263,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://prefix-path-rules/aaa/bbb/ccc"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2252,11 +2302,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2290,11 +2341,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "aaa-slash-bbb-prefix" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2328,10 +2380,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/aaa/bbb/ccc"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2377,13 +2430,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario9" aria-expanded="true" aria-controls="scenario9" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario9" aria-expanded="true" aria-controls="scenario9" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with prefix path rules should and send traffic to the matching backend service</span>
       </a>
       <p>    (prefix /aaa matches request /aaa/ccc)</p>
     </div>
 
-    <div id="scenario9" class="mt-3">
+    <div id="scenario9" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2397,17 +2450,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -2442,10 +2496,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -2480,10 +2535,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://prefix-path-rules/aaa/ccc"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2518,11 +2574,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2556,11 +2613,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "aaa-prefix" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2594,10 +2652,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/aaa/ccc"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2643,13 +2702,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario10" aria-expanded="true" aria-controls="scenario10" class="h5 text-danger">
+      <a data-toggle="collapse" href="#scenario10" aria-expanded="true" aria-controls="scenario10" class="h5 text-danger">
         Scenario: <span class="text-muted">An Ingress with prefix path rules should match each labels string prefix</span>
       </a>
       <p>    (prefix /aaa does not match request /aaaccc)</p>
     </div>
 
-    <div id="scenario10" class="mt-3">
+    <div id="scenario10" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2663,17 +2722,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-match-each-labels-string-prefix-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -2708,10 +2768,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -2746,10 +2807,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://prefix-path-rules/aaaccc"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2783,10 +2845,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2803,7 +2866,7 @@ code {
     
     
     <div id="error103-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
+      class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
       <pre class="info text-white p-0 m-0">expected status code 404 but 200 was returned</pre>
     </div>
     
@@ -2819,7 +2882,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-danger pl-3 pr-3">
-    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 35s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -2841,13 +2904,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario11" aria-expanded="true" aria-controls="scenario11" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario11" aria-expanded="true" aria-controls="scenario11" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with prefix path rules should ignore the request trailing slash and send traffic to the matching backend service</span>
       </a>
       <p>    (prefix /foo matches request /foo/)</p>
     </div>
 
-    <div id="scenario11" class="mt-3">
+    <div id="scenario11" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2861,17 +2924,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-prefix-path-rules-should-ignore-the-request-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -2906,10 +2970,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -2944,10 +3009,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://prefix-path-rules/foo/"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2982,11 +3048,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3020,11 +3087,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "foo-prefix" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3058,10 +3126,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/foo/"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3107,13 +3176,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario12" aria-expanded="true" aria-controls="scenario12" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario12" aria-expanded="true" aria-controls="scenario12" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with mixed path rules should send traffic to the matching backend service where Exact is preferred</span>
       </a>
       <p>    (exact /foo matches request /foo)</p>
     </div>
 
-    <div id="scenario12" class="mt-3">
+    <div id="scenario12" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -3127,17 +3196,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-mixed-path-rules-should-send-traffic-to-the-matching-backend-service-where-exact-is-preferred-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -3172,10 +3242,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -3210,10 +3281,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://mixed-path-rules/foo"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3248,11 +3320,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3286,11 +3359,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "foo-exact" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3324,10 +3398,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/foo"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3373,13 +3448,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario13" aria-expanded="true" aria-controls="scenario13" class="h5 text-danger">
+      <a data-toggle="collapse" href="#scenario13" aria-expanded="true" aria-controls="scenario13" class="h5 text-danger">
         Scenario: <span class="text-muted">An Ingress with a trailing slashes in a prefix path rule should ignore the trailing slash and send traffic to the matching backend service</span>
       </a>
       <p>    (prefix /aaa/bbb/ matches request /aaa/bbb)</p>
     </div>
 
-    <div id="scenario13" class="mt-3">
+    <div id="scenario13" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -3393,17 +3468,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -3438,10 +3514,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -3476,10 +3553,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://trailing-slash-path-rules/aaa/bbb"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3514,10 +3592,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3552,10 +3631,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "aaa-slash-bbb-slash-prefix" service        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3589,10 +3669,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/aaa/bbb"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3609,7 +3690,7 @@ code {
     
     
     <div id="error135-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
+      class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
       <pre class="info text-white p-0 m-0">expected the request path to be /aaa/bbb but it was /aaa/bbb/</pre>
     </div>
     
@@ -3647,13 +3728,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario14" aria-expanded="true" aria-controls="scenario14" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario14" aria-expanded="true" aria-controls="scenario14" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a trailing slashes in a prefix path rule should ignore the trailing slash and send traffic to the matching backend service</span>
       </a>
       <p>    (prefix /aaa/bbb/ matches request /aaa/bbb/)</p>
     </div>
 
-    <div id="scenario14" class="mt-3">
+    <div id="scenario14" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -3667,17 +3748,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-a-prefix-path-rule-should-ignore-the-trailing-slash-and-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -3712,10 +3794,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -3750,10 +3833,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://trailing-slash-path-rules/aaa/bbb/"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3788,11 +3872,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3826,11 +3911,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "aaa-slash-bbb-slash-prefix" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3864,10 +3950,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "/aaa/bbb/"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3913,13 +4000,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario15" aria-expanded="true" aria-controls="scenario15" class="h5 text-danger">
+      <a data-toggle="collapse" href="#scenario15" aria-expanded="true" aria-controls="scenario15" class="h5 text-danger">
         Scenario: <span class="text-muted">An Ingress with a trailing slashes in an exact path rule should not match requests without a trailing slash</span>
       </a>
       <p>    (exact /foo/ does not match request /foo)</p>
     </div>
 
-    <div id="scenario15" class="mt-3">
+    <div id="scenario15" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -3933,17 +4020,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">30s</span>
+                
+
                 an Ingress resource in a new random namespace        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</button>
-        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
+        <div id="path-rules-an-ingress-with-a-trailing-slashes-in-an-exact-path-rule-should-not-match-requests-without-a-trailing-slash-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: path-rules<br />spec:<br />  rules:<br />    - host: "exact-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "prefix-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa/bbb<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /aaa<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-prefix<br />                port:<br />                  number: 8080<br /><br />    - host: "mixed-path-rules"<br />      http:<br />        paths:<br />          - path: /foo<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-exact<br />                port:<br />                  number: 8080<br /><br />    - host: "trailing-slash-path-rules"<br />      http:<br />        paths:<br />          - path: /aaa/bbb/<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: aaa-slash-bbb-slash-prefix<br />                port:<br />                  number: 8080<br /><br />          - path: /foo/<br />            pathType: Exact<br />            backend:<br />              service:<br />                name: foo-slash-exact<br />                port:<br />                  number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">30s</span>
         
       </div>
       
@@ -3978,10 +4066,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -4016,10 +4105,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://trailing-slash-path-rules/foo"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -4053,10 +4143,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -4073,7 +4164,7 @@ code {
     
     
     <div id="error153-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
+      class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
       <pre class="info text-white p-0 m-0">expected status code 404 but 200 was returned</pre>
     </div>
     
@@ -4089,7 +4180,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-danger pl-3 pr-3">
-    Duration: 35s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 40s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -4115,7 +4206,7 @@ code {
       </div>
     </div>
     
-  </div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>

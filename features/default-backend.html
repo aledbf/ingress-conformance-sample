@@ -10,8 +10,7 @@
     integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" />
   <style type="text/css">
-    
-/* colors */
+    /* colors */
 .ambiguous-color {
 	color: #E74C3C !important;
 }
@@ -211,21 +210,29 @@ code {
 }
 
 .card {
-	border: 1px solid rgba(0,0,0,.12);
+	border: 1px solid rgba(0, 0, 0, .12);
+}
+
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+}
+
+.scenario-step-collapse {
+	padding: 0;
+	margin: 0;
 }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row mb-3 p-3">
-      <nav class="navbar navbar-light text-light bg-dark fixed-top">
-        <a href="../index.html" class="btn btn-light active" role="button" aria-pressed="true">Home</a>
-        <div class="mx-auto">
-          <strong>Ingress controller:</strong><em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong><em class="pl-1 pr-3">v0.34.1</em>
-        </div>
-      </nav>
-    </div>
-
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark text-white">
+     <a href="../index.html" class="btn btn-light active mr-4" role="button" aria-pressed="true">Home</a>
+     <div class="mx-auto">
+        <strong>Ingress controller:</strong> <em class="pl-1 pr-3">ingress-nginx</em>
+        <strong>version:</strong> <em class="pl-1 pr-3">v0.34.1</em>
+      </div>
+   </nav>
+   <main role="main" class="container">
     <div class="row mb-3 p-3">
       <div class="col-sm-12 col-md-6 ">
         
@@ -255,7 +262,7 @@ code {
 <div class="col-sm-8 col-md-6">
   <h5>Scenarios</h5>
     <table class="table table-bordered table-striped thead-dark table-sm">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th>Status</th>
           <th>Progress</th>
@@ -288,13 +295,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
         Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
       </a>
       <p></p>
     </div>
 
-    <div id="scenario0" class="mt-3">
+    <div id="scenario0" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -308,10 +315,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -346,17 +354,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
                 an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--2-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--2-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--2-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--2-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
           <code>
             <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -391,10 +400,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -429,10 +439,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to http://"my-host"/""        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -467,11 +478,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -505,11 +517,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "echo-service" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -543,11 +556,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -581,11 +595,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response headers must contain <key> with matching <value>        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -619,11 +634,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request method must be "GET"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -657,11 +673,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be ""        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -695,11 +712,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -733,10 +751,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -782,13 +801,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
         Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
       </a>
       <p></p>
     </div>
 
-    <div id="scenario1" class="mt-3">
+    <div id="scenario1" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -802,10 +821,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -840,17 +860,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
                 an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--3-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--3-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--3-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--3-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
           <code>
             <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -885,10 +906,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -923,10 +945,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to http://"my-host"/"sub-path"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -961,11 +984,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -999,11 +1023,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "echo-service" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1037,11 +1062,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1075,11 +1101,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response headers must contain <key> with matching <value>        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1113,11 +1140,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request method must be "GET"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1151,11 +1179,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "sub-path"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1189,10 +1218,283 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request proto must be "HTTP/1.1"        
         
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request headers must contain <key> with matching <value>        
         
-        <span class="duration">0s</span>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </div>
+  <div class="card-footer p-1 border-success pl-3 pr-3">
+    Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="d-inline-block float-right">
+      
+      
+      
+      
+      
+      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+      
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12 mb-3">
+  
+  <div class="card m-1">
+  <div class="card-body">
+    <div class="card-title m-0">
+      <a data-toggle="collapse" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
+        Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
+      </a>
+      <p></p>
+    </div>
+
+    <div id="scenario2" class="mt-3 collapse show">
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
+                a new random namespace        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
+                an Ingress resource named "default-backend" with this spec:        
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--4-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--4-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
+          <code>
+            <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
+          </code>
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
+                The Ingress status shows the IP address or FQDN where it is exposed        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
+                I send a "POST" request to http://"some-host"/""        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response status-code must be 200        
         
       </div>
       
@@ -1227,10 +1529,245 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response must be served by the "echo-service" service        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response proto must be "HTTP/1.1"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the response headers must contain <key> with matching <value>        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request method must be "POST"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request path must be ""        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
+                the request proto must be "HTTP/1.1"        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="scenario-step-container">
+      
+      
+      <div class="label" title="Success">
+        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
+          title="Step passed">check_circle</i>
+      </div>
+      
+      
+      <div class="text">
+        <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1276,13 +1813,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
         Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
       </a>
       <p></p>
     </div>
 
-    <div id="scenario2" class="mt-3">
+    <div id="scenario3" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -1296,10 +1833,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1334,17 +1872,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
                 an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--4-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--4-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--5-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--5-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
           <code>
             <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -1379,10 +1918,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -1417,505 +1957,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
-                I send a "POST" request to http://"some-host"/""        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                the response status-code must be 200        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response must be served by the "echo-service" service        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response proto must be "HTTP/1.1"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the response headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request method must be "POST"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request path must be ""        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request proto must be "HTTP/1.1"        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">And</span>
-                the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
-  </div>
-  <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
-    <div class="d-inline-block float-right">
-      
-      
-      
-      
-      
-      <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
-      
-      
-    </div>
-  </div>
-</div>
-</div>
+                
+                <span class="duration">0s</span>
+                
 
-<div class="col-sm-12 mb-3">
-  
-  <div class="card m-1">
-  <div class="card-body">
-    <div class="card-title m-0">
-      <a data-toggle="" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
-        Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
-      </a>
-      <p></p>
-    </div>
-
-    <div id="scenario3" class="mt-3">
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                a new random namespace        
-        
-        
-        <span class="duration">0s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Given</span>
-                an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--5-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--5-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
-          <code>
-            <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
-          </code>
-        </div>
-        
-        
-        
-        <span class="duration">5s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">Then</span>
-                The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
-        
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="scenario-step-container">
-      
-      
-      <div class="label" title="Success">
-        <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top"
-          title="Step passed">check_circle</i>
-      </div>
-      
-      
-      <div class="text">
-        <span class="keyword highlight">When</span>
                 I send a "PUT" request to http://""/"resource"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1949,11 +1996,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1987,11 +2035,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "echo-service" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2025,11 +2074,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2063,11 +2113,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response headers must contain <key> with matching <value>        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2101,11 +2152,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request method must be "PUT"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2139,11 +2191,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "resource"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2177,11 +2230,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2215,10 +2269,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2264,13 +2319,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
         Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
       </a>
       <p></p>
     </div>
 
-    <div id="scenario4" class="mt-3">
+    <div id="scenario4" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2284,10 +2339,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2322,17 +2378,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
                 an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--6-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--6-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--6-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--6-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
           <code>
             <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -2367,10 +2424,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -2405,11 +2463,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "DELETE" request to http://"some-host"/"resource"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2443,11 +2502,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2481,11 +2541,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "echo-service" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2519,11 +2580,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2557,11 +2619,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response headers must contain <key> with matching <value>        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2595,11 +2658,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request method must be "DELETE"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2633,11 +2697,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "resource"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2671,11 +2736,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2709,10 +2775,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2758,13 +2825,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
         Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
       </a>
       <p></p>
     </div>
 
-    <div id="scenario5" class="mt-3">
+    <div id="scenario5" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -2778,10 +2845,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2816,17 +2884,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">5s</span>
+                
+
                 an Ingress resource named "default-backend" with this spec:        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--7-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</button>
-        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--7-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--7-an-Ingress-resource-named--default-backend--with-this-spec-">+Show Parameter</a>
+        <div id="default-backend-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend--7-an-Ingress-resource-named--default-backend--with-this-spec-" class="collapse ml-3 mr-3">
           <code>
             <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -2861,10 +2930,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -2899,10 +2969,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "PATCH" request to http://"my-host"/"resource"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2937,11 +3008,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -2975,11 +3047,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "echo-service" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3013,11 +3086,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3051,11 +3125,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response headers must contain <key> with matching <value>        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3089,11 +3164,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request method must be "PATCH"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3127,11 +3203,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request path must be "resource"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3165,11 +3242,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request proto must be "HTTP/1.1"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -3203,10 +3281,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request headers must contain <key> with matching <value>        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -3256,7 +3335,7 @@ code {
       </div>
     </div>
     
-  </div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>

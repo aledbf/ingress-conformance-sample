@@ -10,8 +10,7 @@
     integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" />
   <style type="text/css">
-    
-/* colors */
+    /* colors */
 .ambiguous-color {
 	color: #E74C3C !important;
 }
@@ -211,21 +210,29 @@ code {
 }
 
 .card {
-	border: 1px solid rgba(0,0,0,.12);
+	border: 1px solid rgba(0, 0, 0, .12);
+}
+
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+}
+
+.scenario-step-collapse {
+	padding: 0;
+	margin: 0;
 }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row mb-3 p-3">
-      <nav class="navbar navbar-light text-light bg-dark fixed-top">
-        <a href="../index.html" class="btn btn-light active" role="button" aria-pressed="true">Home</a>
-        <div class="mx-auto">
-          <strong>Ingress controller:</strong><em class="pl-1 pr-3">ingress-nginx</em> <strong>version:</strong><em class="pl-1 pr-3">v0.34.1</em>
-        </div>
-      </nav>
-    </div>
-
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark text-white">
+     <a href="../index.html" class="btn btn-light active mr-4" role="button" aria-pressed="true">Home</a>
+     <div class="mx-auto">
+        <strong>Ingress controller:</strong> <em class="pl-1 pr-3">ingress-nginx</em>
+        <strong>version:</strong> <em class="pl-1 pr-3">v0.34.1</em>
+      </div>
+   </nav>
+   <main role="main" class="container">
     <div class="row mb-3 p-3">
       <div class="col-sm-12 col-md-6 ">
         
@@ -254,7 +261,7 @@ code {
 <div class="col-sm-8 col-md-6">
   <h5>Scenarios</h5>
     <table class="table table-bordered table-striped thead-dark table-sm">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th>Status</th>
           <th>Progress</th>
@@ -287,13 +294,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario0" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a host rule should send TLS traffic to the matching backend service</span>
       </a>
       <p>    (host foo.bar.com matches request foo.bar.com)</p>
     </div>
 
-    <div id="scenario0" class="mt-3">
+    <div id="scenario0" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -307,11 +314,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -345,11 +353,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -383,17 +392,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-host-rule-should-send-tls-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-host-rule-should-send-tls-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-host-rule-should-send-tls-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-host-rule-should-send-tls-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -428,10 +438,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -466,10 +477,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "https://foo.bar.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -504,11 +516,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the secure connection must verify the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -542,11 +555,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -580,11 +594,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "foo-bar-com" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -618,10 +633,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request host must be "foo.bar.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -647,7 +663,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 20s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 15s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -667,13 +683,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario1" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a host rule should send traffic to the matching backend service</span>
       </a>
       <p>    (host foo.bar.com matches request foo.bar.com)</p>
     </div>
 
-    <div id="scenario1" class="mt-3">
+    <div id="scenario1" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -687,11 +703,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -725,11 +742,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -763,17 +781,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -808,10 +827,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -846,11 +866,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://foo.bar.com"        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -884,11 +905,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -922,11 +944,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "foo-bar-com" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -960,10 +983,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request host must be "foo.bar.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1009,13 +1033,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario2" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a host rule should not route traffic when hostname does not match</span>
       </a>
       <p>    (host foo.bar.com does not match request subdomain.bar.com)</p>
     </div>
 
-    <div id="scenario2" class="mt-3">
+    <div id="scenario2" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -1029,11 +1053,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1067,11 +1092,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1105,17 +1131,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-host-rule-should-not-route-traffic-when-hostname-does-not-match-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-host-rule-should-not-route-traffic-when-hostname-does-not-match-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-host-rule-should-not-route-traffic-when-hostname-does-not-match-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-host-rule-should-not-route-traffic-when-hostname-does-not-match-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1150,10 +1177,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1188,10 +1216,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://subdomain.bar.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1226,10 +1255,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1275,13 +1305,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-danger">
+      <a data-toggle="collapse" href="#scenario3" aria-expanded="true" aria-controls="scenario3" class="h5 text-danger">
         Scenario: <span class="text-muted">An Ingress with a wildcard host rule should send traffic to the matching backend service</span>
       </a>
       <p>    (Matches based on shared suffix)</p>
     </div>
 
-    <div id="scenario3" class="mt-3">
+    <div id="scenario3" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -1295,11 +1325,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1333,11 +1364,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1371,17 +1403,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-wildcard-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-wildcard-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-send-traffic-to-the-matching-backend-service-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1416,10 +1449,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">5s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1453,10 +1487,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://bar.foo.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1473,8 +1508,8 @@ code {
     
     
     <div id="error34-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
-      <pre class="info text-white p-0 m-0">Get "https://10.96.183.110/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
+      class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+      <pre class="info text-white p-0 m-0">Get "https://10.111.96.88/": x509: certificate is valid for ingress.local, not bar.foo.com</pre>
     </div>
     
     
@@ -1497,11 +1532,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 200        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1534,11 +1570,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response must be served by the "wildcard-foo-com" service        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1571,10 +1608,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">And</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the request host must be "bar.foo.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1600,7 +1638,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-danger pl-3 pr-3">
-    Duration: 20s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 15s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -1624,13 +1662,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-danger">
+      <a data-toggle="collapse" href="#scenario4" aria-expanded="true" aria-controls="scenario4" class="h5 text-danger">
         Scenario: <span class="text-muted">An Ingress with a wildcard host rule should not route traffic matching on more than a single dns label</span>
       </a>
       <p>    (No match, wildcard only covers a single DNS label)</p>
     </div>
 
-    <div id="scenario4" class="mt-3">
+    <div id="scenario4" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -1644,11 +1682,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1682,11 +1721,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1720,17 +1760,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-on-more-than-a-single-dns-label-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-on-more-than-a-single-dns-label-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-on-more-than-a-single-dns-label-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-on-more-than-a-single-dns-label-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1765,10 +1806,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -1803,10 +1845,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://baz.bar.foo.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1840,10 +1883,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -1860,7 +1904,7 @@ code {
     
     
     <div id="error45-error"
-      class="scenario-step-collapse collapse bg-danger p-2">
+      class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
       <pre class="info text-white p-0 m-0">expected status code 404 but 200 was returned</pre>
     </div>
     
@@ -1898,13 +1942,13 @@ code {
   <div class="card m-1">
   <div class="card-body">
     <div class="card-title m-0">
-      <a data-toggle="" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
+      <a data-toggle="collapse" href="#scenario5" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
         Scenario: <span class="text-muted">An Ingress with a wildcard host rule should not route traffic matching no dns label</span>
       </a>
       <p>    (No match, wildcard only covers a single DNS label)</p>
     </div>
 
-    <div id="scenario5" class="mt-3">
+    <div id="scenario5" class="mt-3 collapse show">
     
     
     <div class="scenario-step-container">
@@ -1918,11 +1962,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a new random namespace        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1956,11 +2001,12 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">0s</span>
+                
+
                 a self-signed TLS secret named "conformance-tls" for the "foo.bar.com" hostname        
         
-        
-        <span class="duration">0s</span>
-        
       </div>
       
       
@@ -1994,17 +2040,18 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Given</span>
+                
+                <span class="duration">10s</span>
+                
+
                 an Ingress resource        
-        <button type="button" class="btn btn-info btn-sm" data-toggle="collapse" data-target="#host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-no-dns-label-an-Ingress-resource">+Show Parameter</button>
-        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-no-dns-label-an-Ingress-resource" class="collapse">
+        <a class="btn text-primary" data-toggle="collapse" href="#host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-no-dns-label-an-Ingress-resource">+Show Parameter</a>
+        <div id="host-rules-an-ingress-with-a-wildcard-host-rule-should-not-route-traffic-matching-no-dns-label-an-Ingress-resource" class="collapse ml-3 mr-3">
           <code>
             <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: host-rules<br />spec:<br />  tls:<br />    - hosts:<br />        - foo.bar.com<br />      secretName: conformance-tls<br />  rules:<br />    - host: "*.foo.com"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: wildcard-foo-com<br />                port:<br />                  number: 8080<br /><br />    - host: foo.bar.com<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: foo-bar-com<br />                port:<br />                  name: http</pre>
           </code>
         </div>
         
-        
-        
-        <span class="duration">10s</span>
         
       </div>
       
@@ -2039,10 +2086,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">10s</span>
+                
+
                 The Ingress status shows the IP address or FQDN where it is exposed        
-        
-        
-        <span class="duration">5s</span>
         
       </div>
       
@@ -2077,10 +2125,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">When</span>
+                
+                <span class="duration">0s</span>
+                
+
                 I send a "GET" request to "http://foo.com"        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2115,10 +2164,11 @@ code {
       
       <div class="text">
         <span class="keyword highlight">Then</span>
+                
+                <span class="duration">0s</span>
+                
+
                 the response status-code must be 404        
-        
-        
-        <span class="duration">0s</span>
         
       </div>
       
@@ -2144,7 +2194,7 @@ code {
     </div>
   </div>
   <div class="card-footer p-1 border-success pl-3 pr-3">
-    Duration: 15s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    Duration: 20s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
     <div class="d-inline-block float-right">
       
       
@@ -2168,7 +2218,7 @@ code {
       </div>
     </div>
     
-  </div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
