@@ -40,7 +40,7 @@ jobs:
         with:
           version: v0.8.1
           config: .github/kind.yaml
-          image: aledbf/kind-node:v1.19.0-rc.0
+          image: kindest/node:v1.19.0
 
       # this step can be replaced with a KUBECONFIG file or a different ingress controller
       - name: Prepare cluster for testing
