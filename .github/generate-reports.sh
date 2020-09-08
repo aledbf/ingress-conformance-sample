@@ -35,8 +35,7 @@ docker run \
   -v "${SONOBUOY_REPORTS}":/input:ro \
   -v "${TEMP_CONTENT}":/output \
   -u "$(id -u):$(id -g)" \
-  aledbf/reports-builder:0.1
-  # replace image with staging from gcr after https://github.com/kubernetes/test-infra/pull/18874
+  gcr.io/k8s-staging-ingressconformance/reports-builder@sha256:73326b3ac905fefdcc8bc2771107afed7975e790fd2b5ed2d73b5874f731ef04
 
 pushd "${TEMP_WORKTREE}" > /dev/null
 
