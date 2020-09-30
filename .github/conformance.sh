@@ -18,27 +18,38 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+function current_time {
+  echo -n "$(date -u +'%Y-%M-%dT%H:%M')"
+}
+
 if [ -z "${INGRESS_CLASS}" ]; then
   echo "Environment variable INGRESS_CLASS must be set"
   exit 1
 fi
 
-echo "Running... (can take some time)"
+if [ -z "${INGRESS_CONFORMANCE_IMAGE}" ]; then
+  echo "Environment variable INGRESS_CONFORMANCE_IMAGE must be set"
+  exit 1
+fi
+
+echo -e "$(current_time)\tRunning... (can take some time)"
 
 sonobuoy run \
   --skip-preflight \
-  --kube-conformance-image=aledbf/ingress-controller-conformance:dev-0.24 \
-  --plugin-env e2e.INGRESS_CLASS=${INGRESS_CLASS}
+  --kube-conformance-image=${INGRESS_CONFORMANCE_IMAGE} \
+  --plugin-env e2e.INGRESS_CLASS=${INGRESS_CLASS} \
+  --plugin-env e2e.WAIT_FOR_STATUS_TIMEOUT=${WAIT_FOR_STATUS_TIMEOUT:-5m} \
+  --plugin-env e2e.TEST_TIMEOUT=${TEST_TIMEOUT:-20m}
 
 sleep 60
 
-# Wait until Sonobuoy test completes
+# wait until Sonobuoy test completes
 until sonobuoy status | grep -m 1 "complete"; do : ; done
 
-# Wait for the report to be generated
+# wait for the report to be generated
 until sonobuoy logs | grep -m 1 "Results available"; do : ; done
 
-# Retrieve the result file to local system
+# retrieve the result file to local system
 sonobuoy retrieve
 
 mkdir -p /tmp/reports

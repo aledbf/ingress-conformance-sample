@@ -27,7 +27,7 @@ CONTROLLER_VERSION=${CONTROLLER_VERSION:-'N/A'}
 TEMP_CONTENT=$(mktemp -d)
 
 docker run \
-  -e BUILD="$(date -u +'%Y%m%d%H%M')" \
+  -e BUILD="$(date -u +'%Y-%M-%dT%H:%M')" \
   -e INPUT_DIRECTORY=/input \
   -e OUTPUT_DIRECTORY=/output \
   -e INGRESS_CONTROLLER="${INGRESS_CONTROLLER}" \

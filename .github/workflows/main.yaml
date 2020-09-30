@@ -17,12 +17,18 @@ jobs:
       INGRESS_CONTROLLER_URL: ${{ secrets.INGRESS_CONTROLLER_URL }}
       INGRESS_CONTROLLER: ${{ secrets.INGRESS_CONTROLLER }}
       CONTROLLER_VERSION: ${{ secrets.CONTROLLER_VERSION }}
+      INGRESS_CONFORMANCE_IMAGE: ${{ secrets.INGRESS_CONFORMANCE_IMAGE }}
 
     steps:
+
       - name: Prepare environment
         run: |
           if [ -z "${INGRESS_CONTROLLER_URL}" ]; then
             echo "Secret variable INGRESS_CONTROLLER_URL must be set"
+            exit 1
+          fi
+          if [ -z "${INGRESS_CONFORMANCE_IMAGE}" ]; then
+            echo "Secret variable INGRESS_CONFORMANCE_IMAGE must be set"
             exit 1
           fi
 
@@ -42,7 +48,6 @@ jobs:
           config: .github/kind.yaml
           image: kindest/node:v1.19.1
 
-      # this step can be replaced with a KUBECONFIG file or a different ingress controller
       - name: Prepare cluster for testing
         run: |
           kubectl version
