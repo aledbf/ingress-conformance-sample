@@ -18,36 +18,31 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-function current_time {
-  echo -n "$(date -u +'%Y-%M-%dT%H:%M')"
+log() {
+  echo "$(date -u +'%Y-%M-%dT%H:%M')" "$@"
 }
 
 if [ -z "${INGRESS_CLASS}" ]; then
-  echo "Environment variable INGRESS_CLASS must be set"
+  log "Environment variable INGRESS_CLASS must be set"
   exit 1
 fi
 
 if [ -z "${INGRESS_CONFORMANCE_IMAGE}" ]; then
-  echo "Environment variable INGRESS_CONFORMANCE_IMAGE must be set"
+  log "Environment variable INGRESS_CONFORMANCE_IMAGE must be set"
   exit 1
 fi
 
-echo -e "$(current_time)\tRunning... (can take some time)"
+log "Running... (can take some time)"
+
+STARTTIME=`date +%s`;
 
 sonobuoy run \
   --skip-preflight \
   --kube-conformance-image=${INGRESS_CONFORMANCE_IMAGE} \
   --plugin-env e2e.INGRESS_CLASS=${INGRESS_CLASS} \
   --plugin-env e2e.WAIT_FOR_STATUS_TIMEOUT=${WAIT_FOR_STATUS_TIMEOUT:-5m} \
-  --plugin-env e2e.TEST_TIMEOUT=${TEST_TIMEOUT:-20m}
-
-sleep 60
-
-# wait until Sonobuoy test completes
-until sonobuoy status | grep -m 1 "complete"; do : ; done
-
-# wait for the report to be generated
-until sonobuoy logs | grep -m 1 "Results available"; do : ; done
+  --plugin-env e2e.TEST_TIMEOUT=${TEST_TIMEOUT:-20m} \
+  --wait
 
 # retrieve the result file to local system
 sonobuoy retrieve
@@ -55,3 +50,8 @@ sonobuoy retrieve
 mkdir -p /tmp/reports
 tar zxpvf *_sonobuoy_*.tar.gz --wildcards "*-report.json"
 mv plugins/e2e/results/global/* /tmp/reports
+
+CURRTIME=`date +%s`;
+CURRELAPSED=$(( CURRTIME - STARTTIME));
+
+log "Conformance execution time was ${CURRELAPSED} seconds"
