@@ -246,12 +246,9 @@ kbd {
         
         
         
-        <h1>Feature: <small>Ingress class</small></h1>
-        <p>  Ingresses can be implemented by different controllers, often with different configuration.
-  Each Ingress definition could specify a class, a reference to an IngressClass resource that contains
-  additional configuration including the name of the controller that should implement the class.
-  
-  https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class</p>
+        <h1>Feature: <small>Load Balancing</small></h1>
+        <p>  An Ingress exposing a backend service with multiple replicas should use all the pods available
+  The feature sessionAffinity is not configured in the backend service https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#service-v1-core</p>
       </div>
       <div class="col-sm-12 col-md-6">
         <div class="row justify-content-end">
@@ -294,7 +291,7 @@ kbd {
     <div class="card-body">
       <div class="card-title m-0">
         <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
-          Scenario: <span class="text-muted">An Ingress with an invalid ingress class should not send traffic to the matching backend service</span>
+          Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend and</span>
         </a>
         <p></p>
       </div>
@@ -312,13 +309,48 @@ kbd {
         
         <div class="text">
           <span class="keyword highlight">Given </span>
+                    <span class="duration">0s</span>
+                              
+          a new random namespace          
+          
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="scenario-step-container">
+        
+        
+        <div class="label" title="Success">
+          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        </div>
+        
+        
+        <div class="text">
+          <span class="keyword highlight">Given </span>
                     <span class="duration">5s</span>
                               
-          an Ingress resource in a new random namespace          
-          <a class="btn text-primary" data-toggle="collapse" href="#ingress-class-an-ingress-with-an-invalid-ingress-class-should-not-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace">+Show Parameter</a>
-          <div id="ingress-class-an-ingress-with-an-invalid-ingress-class-should-not-send-traffic-to-the-matching-backend-service-an-Ingress-resource-in-a-new-random-namespace" class="collapse ml-3 mr-3">
+          an Ingress resource named <kbd>load-balancing</kbd> with this spec:          
+          <a class="btn text-primary" data-toggle="collapse" href="#load-balancing-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend-and-an-Ingress-resource-named--load-balancing--with-this-spec-">+Show Parameter</a>
+          <div id="load-balancing-an-ingress-with-no-rules-should-send-all-requests-to-the-default-backend-and-an-Ingress-resource-named--load-balancing--with-this-spec-" class="collapse ml-3 mr-3">
             <code>
-              <pre>apiVersion: networking.k8s.io/v1<br />kind: Ingress<br />metadata:<br />  name: test-ingress-class<br />spec:<br />  ingressClassName: some-invalid-class-name<br />  rules:<br />    - host: "ingress-class"<br />      http:<br />        paths:<br />          - path: /<br />            pathType: Prefix<br />            backend:<br />              service:<br />                name: ingress-class-prefix<br />                port:<br />                  number: 8080</pre>
+              <pre>defaultBackend:<br />  service:<br />    name: echo-service<br />    port:<br />      number: 8080</pre>
             </code>
           </div>
           
@@ -354,9 +386,114 @@ kbd {
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">5m0s</span>
+                    <span class="duration">10s</span>
                               
-          The Ingress status should not contain the IP address or FQDN          
+          The Ingress status shows the IP address or FQDN where it is exposed          
+          
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="scenario-step-container">
+        
+        
+        <div class="label" title="Success">
+          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        </div>
+        
+        
+        <div class="text">
+          <span class="keyword highlight">Then </span>
+                    <span class="duration">1m10s</span>
+                              
+          The backend deployment <kbd>echo-service</kbd> for the ingress resource is scaled to <kbd>10</kbd>          
+          
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="scenario-step-container">
+        
+        
+        <div class="label" title="Success">
+          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        </div>
+        
+        
+        <div class="text">
+          <span class="keyword highlight">When </span>
+                    <span class="duration">0s</span>
+                              
+          I send <kbd>100</kbd> requests to <kbd>http://load-balancing</kbd>          
+          
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="scenario-step-container">
+        
+        
+        <div class="label" title="Success">
+          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        </div>
+        
+        
+        <div class="text">
+          <span class="keyword highlight">Then </span>
+                    <span class="duration">0s</span>
+                              
+          all the responses status-code must be <kbd>200</kbd> and the response body should contain the IP address of <kbd>10</kbd> different Kubernetes pods          
           
         </div>
         
@@ -381,14 +518,14 @@ kbd {
       </div>
     </div>
     <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 5m5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+      Duration: 1m25s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">2</span>
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">6</span>
         
         
       </div>
