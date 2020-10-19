@@ -229,7 +229,7 @@
   </nav>
   <main role="main" class="container">
     <div class="row mb-3 p-3">
-      <div class="col-sm-6 col-md-6 col-lg-4 offset-lg-1">
+      <div class="col-lg-6">
         <div class="row">
           <div class="col-sm-4 col-md-6 col-lg-4">
             <canvas id="feature-chart"></canvas>
@@ -261,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-6 col-lg-4 offset-lg-1">
+      <div class="col-lg-6">
         <div class="row justify-content-end">
           <div class="col-sm-4 col-md-6 col-lg-4">
             <canvas id="scenario-chart"></canvas>
@@ -319,7 +319,7 @@
               <td class="text-right">6</td>
               <td class="text-right">6</td>
               <td class="text-right none">0</td>
-              <td>1m2s</td>
+              <td>1m0s</td>
             </tr>
             <tr>
               <td>
@@ -330,7 +330,7 @@
               <td class="text-right">6</td>
               <td class="text-right">5</td>
               <td class="text-right">1</td>
-              <td>2m2s</td>
+              <td>1m58s</td>
             </tr>
             <tr>
               <td>
@@ -352,7 +352,7 @@
               <td class="text-right">16</td>
               <td class="text-right">14</td>
               <td class="text-right">2</td>
-              <td>10m36s</td>
+              <td>10m42s</td>
             </tr>
           </tbody>
         </table>
@@ -375,6 +375,7 @@
   var featureOptions = {
   legend: false,
   responsive: true,
+  maintainAspectRatio: false,
   };
   new Chart(document.getElementById("feature-chart"), {
   type: "doughnut",
@@ -414,6 +415,7 @@
   var scenarioOptions = {
   legend: false,
   responsive: true,
+  maintainAspectRatio: false,
   };
   new Chart(document.getElementById("scenario-chart"), {
   type: "doughnut",
