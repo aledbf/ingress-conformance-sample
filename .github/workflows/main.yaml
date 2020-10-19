@@ -18,6 +18,7 @@ jobs:
       INGRESS_CONTROLLER: ${{ secrets.INGRESS_CONTROLLER }}
       CONTROLLER_VERSION: ${{ secrets.CONTROLLER_VERSION }}
       INGRESS_CONFORMANCE_IMAGE: ${{ secrets.INGRESS_CONFORMANCE_IMAGE }}
+      TEST_TIMEOUT: ${{ secrets.TEST_TIMEOUT }}
 
     steps:
 
