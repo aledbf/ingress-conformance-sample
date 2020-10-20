@@ -55,6 +55,13 @@ jobs:
           echo "Installing ingress controller..."
           kubectl apply -f "${INGRESS_CONTROLLER_URL}"
 
+          sleep 60
+
+          kubectl wait --namespace ingress-nginx \
+            --for=condition=ready pod \
+            --selector=app.kubernetes.io/component=controller \
+            --timeout=90s
+
       - name: Run conformance tests
         run: |
           .github/conformance.sh
