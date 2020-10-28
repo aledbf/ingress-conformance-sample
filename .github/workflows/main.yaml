@@ -62,6 +62,8 @@ jobs:
             --selector=app.kubernetes.io/component=controller \
             --timeout=90s
 
+          kubectl logs -n ingress-nginx --selector=app.kubernetes.io/component=controller
+
       - name: Run conformance tests
         run: |
           .github/conformance.sh
@@ -74,6 +76,8 @@ jobs:
           git clone --branch=gh-pages --depth=1 "${remote_repo}" "${TEMP_WORKTREE}"
 
           .github/generate-reports.sh
+
+          kubectl logs -n ingress-nginx --selector=app.kubernetes.io/component=controller
 
       - name: Upload cucumber json files
         uses: actions/upload-artifact@v2
