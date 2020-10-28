@@ -272,13 +272,13 @@ kbd {
           <td>
             <p data-toggle="tooltip" data-placement="left" title="Scenario passed">Passed</p>
           </td>
-          <td class="percentage">100.00%</td>
+          <td class="percentage">0.00%</td>
         </tr>
         <tr>
           <td>
             <p data-toggle="tooltip" data-placement="left" title="Scenario failed">Failed</p>
           </td>
-          <td class="percentage">0.00%</td>
+          <td class="percentage">100.00%</td>
       </tbody>
     </table>
   </div>
@@ -293,7 +293,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario0" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario0" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -340,8 +340,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -360,7 +359,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error01-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -368,6 +367,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error01-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -382,14 +385,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">10s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -417,8 +420,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -452,8 +455,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -487,8 +490,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -522,8 +525,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -557,8 +560,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -592,8 +595,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -627,8 +630,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -662,8 +665,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -697,8 +700,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -730,15 +733,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 15s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -750,7 +757,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario1" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario1" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -797,8 +804,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -817,7 +823,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error11-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -825,6 +831,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error11-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -839,14 +849,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">5s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -874,8 +884,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -909,8 +919,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -944,8 +954,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -979,8 +989,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1014,8 +1024,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1049,8 +1059,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1084,8 +1094,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1119,8 +1129,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1154,8 +1164,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1187,15 +1197,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -1207,7 +1221,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario2" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario2" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -1254,8 +1268,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -1274,7 +1287,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error21-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -1282,6 +1295,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error21-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -1296,14 +1313,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">5s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -1331,8 +1348,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1366,8 +1383,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1401,8 +1418,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1436,8 +1453,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1471,8 +1488,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1506,8 +1523,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1541,8 +1558,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1576,8 +1593,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1611,8 +1628,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1644,15 +1661,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -1664,7 +1685,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario3" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario3" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -1711,8 +1732,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -1731,7 +1751,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error31-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -1739,6 +1759,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error31-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -1753,14 +1777,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">5s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -1788,8 +1812,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1823,8 +1847,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1858,8 +1882,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1893,8 +1917,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1928,8 +1952,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1963,8 +1987,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -1998,8 +2022,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2033,8 +2057,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2068,8 +2092,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2101,15 +2125,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -2121,7 +2149,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario4" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario4" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -2168,8 +2196,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -2188,7 +2215,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error41-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -2196,6 +2223,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error41-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -2210,14 +2241,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">5s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -2245,8 +2276,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2280,8 +2311,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2315,8 +2346,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2350,8 +2381,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2385,8 +2416,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2420,8 +2451,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2455,8 +2486,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2490,8 +2521,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2525,8 +2556,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2558,15 +2589,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 10s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -2578,7 +2613,7 @@ kbd {
   <div class="card m-1">
     <div class="card-body">
       <div class="card-title m-0">
-        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario5" class="h5 text-success">
+        <a data-toggle="collapse" href="#" aria-expanded="true" aria-controls="scenario5" class="h5 text-danger">
           Scenario Outline: <span class="text-muted">An Ingress with no rules should send all requests to the default backend</span>
         </a>
         <p></p>
@@ -2625,8 +2660,7 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed"> <i class="material-icons text-danger">error</i>
         </div>
         
         
@@ -2645,7 +2679,7 @@ kbd {
           
         </div>
         
-        
+        <a class="btn text-danger" href="#error51-error" data-toggle="collapse">+Show Error</a>
         
         
         
@@ -2653,6 +2687,10 @@ kbd {
         
       </div>
       
+      
+      <div id="error51-error" class="scenario-step-collapse collapse bg-danger p-2 ml-3 mr-3">
+        <pre class="info text-white p-0 m-0">Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": an error on the server ("") has prevented the request from succeeding</pre>
+      </div>
       
       
       
@@ -2667,14 +2705,14 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
         <div class="text">
           <span class="keyword highlight">Then </span>
-                    <span class="duration">10s</span>
+                    <span class="duration">0s</span>
                               
           The Ingress status shows the IP address or FQDN where it is exposed          
           
@@ -2702,8 +2740,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2737,8 +2775,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2772,8 +2810,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2807,8 +2845,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2842,8 +2880,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2877,8 +2915,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2912,8 +2950,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2947,8 +2985,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -2982,8 +3020,8 @@ kbd {
       <div class="scenario-step-container">
         
         
-        <div class="label" title="Success">
-          <i class="material-icons passed-color" data-toggle="tooltip" data-placement="top" title="Step passed">check_circle</i>
+        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+          <i class="material-icons skipped-color">double_arrow</i>
         </div>
         
         
@@ -3015,15 +3053,19 @@ kbd {
       
       </div>
     </div>
-    <div class="card-footer p-1 border-success pl-3 pr-3">
-      Duration: 15s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
+    <div class="card-footer p-1 border-danger pl-3 pr-3">
+      Duration: 5s <span class="new badge"><i class="material-icons" style="font-size: 15px;">query_builder</i></span>
       <div class="d-inline-block float-right">
         
         
         
+        <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">10</span>
         
         
-        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">12</span>
+        <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+        
+        
+        <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">1</span>
         
         
       </div>
@@ -3073,8 +3115,8 @@ kbd {
           datasets: [
             {
               data: [
-                6,
                 0,
+                6,
                 0,
                 0,
                 0,
