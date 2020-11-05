@@ -40,6 +40,7 @@ jobs:
         run: |
           sudo bash -c 'curl -sSL https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.18.4/sonobuoy_0.18.4_linux_amd64.tar.gz | tar xvz -C /usr/local/bin/ sonobuoy'
           # optional step to cleanup the generated HTML
+          sudo rm /etc/apt/sources.list.d/github_git-lfs.list
           sudo bash -c 'apt update && apt install -y tidy'
 
       - name: Create Kubernetes cluster
